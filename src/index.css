@@ -1,0 +1,47 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Roboto:wght@300;400;500;700&family=Poppins:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    font-family: 'Roboto', sans-serif;
+    color: #111827;
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  #root {
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+    text-align: left;
+    border: none;
+    min-height: 100svh;
+    display: block;
+  }
+}
+
+@layer components {
+  .btn-orange {
+    @apply bg-brand-orange text-white font-poppins font-semibold uppercase tracking-wider px-6 py-3 text-sm hover:bg-brand-orange-dark transition-colors duration-200 cursor-pointer inline-block;
+  }
+
+  .btn-ghost {
+    @apply bg-white/10 text-white font-poppins font-semibold uppercase tracking-wider px-6 py-3 text-sm border border-white/30 hover:bg-white/20 transition-colors duration-200 cursor-pointer inline-block;
+  }
+
+  .section-label {
+    @apply font-poppins font-semibold text-brand-orange uppercase tracking-widest text-xs mb-2 block;
+  }
+}
