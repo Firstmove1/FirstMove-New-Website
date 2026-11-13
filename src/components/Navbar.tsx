@@ -3,20 +3,29 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X, Phone, Mail, MapPin } from 'lucide-react';
 import { LinkedInIcon, InstagramIcon, FacebookIcon, TwitterXIcon } from './SocialIcons';
 
+
 const navLinks = [
-  { label: 'HOME', href: '#home' },
-  { label: 'SCHOOLS', href: '#schools' },
-  { label: 'PRIVATE COACHING', href: '#coaching' },
-  { label: 'SPORTS', href: '#sports' },
-  { label: 'LOCKER ROOM', href: '#locker' },
-  { label: 'ABOUT US', href: '#about' },
-  { label: 'CONTACT US', href: '#contact' },
+  { label: 'HOME', href: `${import.meta.env.BASE_URL}#home` },
+  {
+    label: 'SCHOOLS',
+    href: `${import.meta.env.BASE_URL}?page=schools`
+  },
+  { label: 'PRIVATE COACHING', href: `${import.meta.env.BASE_URL}#coaching` },
+  { label: 'SPORTS', href: `${import.meta.env.BASE_URL}#sports` },
+  { label: 'LOCKER ROOM', href: `${import.meta.env.BASE_URL}#locker` },
+  { label: 'ABOUT US', href: `${import.meta.env.BASE_URL}#about` },
+  { label: 'CONTACT US', href: `${import.meta.env.BASE_URL}#contact` },
 ];
+
 
 const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  const [active, setActive] = useState('HOME');
+  const [active, setActive] = useState(() =>
+    new URLSearchParams(window.location.search).get('page') === 'schools'
+      ? 'SCHOOLS'
+      : 'HOME'
+  );
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 10);
@@ -47,13 +56,13 @@ const Navbar: React.FC = () => {
           <div className="flex items-center gap-3 text-xs text-white/80">
 
             {/* Social icons: LinkedIn, Instagram, Facebook, X */}
-            <a href="#" aria-label="LinkedIn"  className="text-white/70 hover:text-brand-orange transition-colors duration-150">
+            <a href="#" aria-label="LinkedIn" className="text-white/70 hover:text-brand-orange transition-colors duration-150">
               <LinkedInIcon size={13} />
             </a>
             <a href="#" aria-label="Instagram" className="text-white/70 hover:text-brand-orange transition-colors duration-150">
               <InstagramIcon size={13} />
             </a>
-            <a href="#" aria-label="Facebook"  className="text-white/70 hover:text-brand-orange transition-colors duration-150">
+            <a href="#" aria-label="Facebook" className="text-white/70 hover:text-brand-orange transition-colors duration-150">
               <FacebookIcon size={13} />
             </a>
             <a href="#" aria-label="Twitter / X" className="text-white/70 hover:text-brand-orange transition-colors duration-150">
@@ -77,7 +86,9 @@ const Navbar: React.FC = () => {
         <div className="max-w-7xl mx-auto px-4 flex items-center justify-between h-14">
 
           {/* Logo */}
-          <a href="#home" className="font-poppins font-bold text-xl text-navy tracking-tight flex-shrink-0">
+          <a
+            href={`${import.meta.env.BASE_URL}#home`}
+            className="font-poppins font-bold text-xl text-navy tracking-tight flex-shrink-0">
             First<span className="text-brand-orange">Move</span>
           </a>
 
@@ -88,11 +99,10 @@ const Navbar: React.FC = () => {
                 key={link.label}
                 href={link.href}
                 onClick={() => setActive(link.label)}
-                className={`font-poppins font-medium text-xs uppercase tracking-wide transition-colors duration-200 whitespace-nowrap ${
-                  active === link.label
-                    ? 'text-brand-orange'
-                    : 'text-gray-700 hover:text-brand-orange'
-                }`}
+                className={`font-poppins font-medium text-xs uppercase tracking-wide transition-colors duration-200 whitespace-nowrap ${active === link.label
+                  ? 'text-brand-orange'
+                  : 'text-gray-700 hover:text-brand-orange'
+                  }`}
               >
                 {link.label}
               </a>
@@ -124,9 +134,8 @@ const Navbar: React.FC = () => {
                     key={link.label}
                     href={link.href}
                     onClick={() => { setActive(link.label); setIsOpen(false); }}
-                    className={`font-poppins font-medium text-sm uppercase tracking-wide ${
-                      active === link.label ? 'text-brand-orange' : 'text-gray-700'
-                    }`}
+                    className={`font-poppins font-medium text-sm uppercase tracking-wide ${active === link.label ? 'text-brand-orange' : 'text-gray-700'
+                      }`}
                   >
                     {link.label}
                   </a>
@@ -134,9 +143,9 @@ const Navbar: React.FC = () => {
 
                 {/* Mobile: social + location row */}
                 <div className="flex items-center gap-4 pt-3 border-t border-gray-100">
-                  <a href="#" aria-label="LinkedIn"    className="text-gray-500 hover:text-brand-orange transition-colors"><LinkedInIcon size={16} /></a>
-                  <a href="#" aria-label="Instagram"   className="text-gray-500 hover:text-brand-orange transition-colors"><InstagramIcon size={16} /></a>
-                  <a href="#" aria-label="Facebook"    className="text-gray-500 hover:text-brand-orange transition-colors"><FacebookIcon size={16} /></a>
+                  <a href="#" aria-label="LinkedIn" className="text-gray-500 hover:text-brand-orange transition-colors"><LinkedInIcon size={16} /></a>
+                  <a href="#" aria-label="Instagram" className="text-gray-500 hover:text-brand-orange transition-colors"><InstagramIcon size={16} /></a>
+                  <a href="#" aria-label="Facebook" className="text-gray-500 hover:text-brand-orange transition-colors"><FacebookIcon size={16} /></a>
                   <a href="#" aria-label="Twitter / X" className="text-gray-500 hover:text-brand-orange transition-colors"><TwitterXIcon size={15} /></a>
                   <span className="w-px h-4 bg-gray-200 mx-1" />
                   <div className="flex items-center gap-1 text-gray-500 text-xs font-poppins">
