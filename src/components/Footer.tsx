@@ -8,7 +8,7 @@ const Footer: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 pb-8 border-b border-white/10">
           <div>
             <h3 className="font-poppins font-bold text-xl mb-3">
-              First<span className="text-brand-orange">Move</span>
+              First<span className="text-brand-orange italic">Move</span>
             </h3>
             <p className="font-roboto text-white/50 text-sm leading-relaxed">
               Premium sports coaching for schools, individuals, and communities. Building champions through structured training.
