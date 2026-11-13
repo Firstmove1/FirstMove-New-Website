@@ -85,7 +85,7 @@ const Hero: React.FC = () => {
           {/* Primary — solid orange, rounded */}
 
           <a
-            href="#schools"
+            href="?page=schools"
             className="inline-flex items-center gap-3 font-poppins font-bold uppercase tracking-wider text-xs text-white px-6 py-3 transition-all duration-200"
             style={{
               background: '#FF9000',
