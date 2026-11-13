@@ -89,7 +89,7 @@ const Navbar: React.FC = () => {
           <a
             href={`${import.meta.env.BASE_URL}#home`}
             className="font-poppins font-bold text-xl text-navy tracking-tight flex-shrink-0">
-            First<span className="text-brand-orange">Move</span>
+            First<span className="text-brand-orange italic">Move</span>
           </a>
 
           {/* Desktop nav links */}
