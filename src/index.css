@@ -45,3 +45,29 @@
     @apply font-poppins font-semibold text-brand-orange uppercase tracking-widest text-xs mb-2 block;
   }
 }
+
+
+@keyframes sports-slide {
+  0% {
+    transform: translateX(100%);
+  }
+
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.sports-marquee {
+  animation: sports-slide 14s linear infinite;
+}
+
+.sports-marquee:hover {
+  animation-play-state: paused;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sports-marquee {
+    animation: none;
+    transform: none;
+  }
+}

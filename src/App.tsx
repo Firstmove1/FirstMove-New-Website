@@ -1,14 +1,20 @@
 
 import Home from './pages/Home';
 import Schools from './pages/Schools';
+import PrivateCoaching from './pages/PrivateCoaching';
 
 function App() {
-  const isSchoolsPage =
-    new URLSearchParams(window.location.search).get('page') === 'schools';
+  const currentPage = new URLSearchParams(window.location.search).get('page');
 
   return (
     <div className="min-h-screen">
-      {isSchoolsPage ? <Schools /> : <Home />}
+      {currentPage === 'schools' ? (
+        <Schools />
+      ) : currentPage === 'coaching' ? (
+        <PrivateCoaching />
+      ) : (
+        <Home />
+      )}
     </div>
   );
 }

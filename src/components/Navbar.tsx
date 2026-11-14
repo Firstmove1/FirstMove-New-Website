@@ -4,13 +4,17 @@ import { Menu, X, Phone, Mail, MapPin } from 'lucide-react';
 import { LinkedInIcon, InstagramIcon, FacebookIcon, TwitterXIcon } from './SocialIcons';
 
 
+
 const navLinks = [
   { label: 'HOME', href: `${import.meta.env.BASE_URL}#home` },
   {
     label: 'SCHOOLS',
     href: `${import.meta.env.BASE_URL}?page=schools`
   },
-  { label: 'PRIVATE COACHING', href: `${import.meta.env.BASE_URL}#coaching` },
+  {
+    label: 'PRIVATE COACHING',
+    href: `${import.meta.env.BASE_URL}?page=coaching`
+  },
   { label: 'SPORTS', href: `${import.meta.env.BASE_URL}#sports` },
   { label: 'LOCKER ROOM', href: `${import.meta.env.BASE_URL}#locker` },
   { label: 'ABOUT US', href: `${import.meta.env.BASE_URL}#about` },
@@ -18,14 +22,18 @@ const navLinks = [
 ];
 
 
+
 const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  const [active, setActive] = useState(() =>
-    new URLSearchParams(window.location.search).get('page') === 'schools'
-      ? 'SCHOOLS'
-      : 'HOME'
-  );
+  const [active, setActive] = useState(() => {
+    const page = new URLSearchParams(window.location.search).get('page');
+
+    if (page === 'schools') return 'SCHOOLS';
+    if (page === 'coaching') return 'PRIVATE COACHING';
+
+    return 'HOME';
+  });
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 10);

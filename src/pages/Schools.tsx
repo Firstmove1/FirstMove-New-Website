@@ -142,7 +142,7 @@ const Schools: React.FC = () => {
                                 </a>
 
                                 <a
-                                    href={`${import.meta.env.BASE_URL}#coaching`}
+                                    href={`${import.meta.env.BASE_URL}?page=coaching`}
                                     className="btn-ghost"
                                 >
                                     For Private Coaching

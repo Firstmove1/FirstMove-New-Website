@@ -100,7 +100,7 @@ const Hero: React.FC = () => {
 
           {/* Secondary — border only, rounded, same radius */}
           <a
-            href="#coaching"
+            href={`${import.meta.env.BASE_URL}?page=coaching`}
             className="font-poppins font-bold uppercase tracking-wider text-xs text-white px-6 py-3 transition-all duration-200"
             style={{
               background: 'rgba(255,255,255,0.08)',
