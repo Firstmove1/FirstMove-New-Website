@@ -6,14 +6,14 @@ import Footer from '../components/Footer';
 const imageBase = `${import.meta.env.BASE_URL}images/private-coaching/`;
 
 const sports = [
-    'BADMINTON',
-    'BASKETBALL',
-    'CHESS',
-    'CRICKET',
-    'FOOTBALL',
-    'SWIMMING',
-    'TABLE TENNIS',
-    'TENNIS',
+    { name: 'BADMINTON', icon: '🏸' },
+    { name: 'BASKETBALL', icon: '🏀' },
+    { name: 'CHESS', icon: '♟️' },
+    { name: 'CRICKET', icon: '🏏' },
+    { name: 'FOOTBALL', icon: '⚽' },
+    { name: 'SWIMMING', icon: '🏊' },
+    { name: 'TABLE TENNIS', icon: '🏓' },
+    { name: 'TENNIS', icon: '🎾' },
 ];
 
 const programmes = [
@@ -117,9 +117,8 @@ function PrivateCoaching() {
             <Navbar />
 
             {/* HERO SECTION */}
-            <section className="relative isolate overflow-hidden bg-[#071a30] pt-24 pb-16 text-white md:pt-28 md:pb-20">
-
-                {/* BACKGROUND IMAGE */}
+            <section className="relative isolate overflow-hidden bg-[#071a30] text-white">
+                {/* Background image */}
                 <div
                     className="absolute inset-0 -z-20 bg-cover bg-center"
                     style={{
@@ -127,16 +126,18 @@ function PrivateCoaching() {
                     }}
                 />
 
-                {/* DARK OVERLAY */}
+                {/* Dark overlay */}
                 <div className="absolute inset-0 -z-10 bg-[#06182c]/65" />
 
-                {/* HERO GRID */}
-                <div className="mx-auto grid w-full max-w-[1440px] grid-cols-1 items-center gap-12 px-6 md:grid-cols-[1.15fr_0.85fr] md:gap-12 md:px-10 lg:gap-14">
+                {/* 
+                    Extra top spacing keeps the hero content below
+                    the fixed website navbar.
+                */}
+                <div className="mx-auto grid w-full max-w-[1440px] grid-cols-1 items-center gap-10 px-6 pt-36 pb-14 md:grid-cols-[minmax(0,1.1fr)_minmax(0,0.9fr)] md:px-10 lg:gap-14 lg:pt-36 lg:pb-16">
 
                     {/* LEFT SIDE CONTENT */}
-                    <div className="flex flex-col justify-center py-4 md:py-8">
-
-                        <p className="mb-8 text-xs font-bold tracking-[0.28em] text-orange-500 sm:text-sm">
+                    <div className="flex min-w-0 flex-col justify-center">
+                        <p className="mb-8 text-sm font-bold tracking-[0.28em] text-orange-500">
                             PRIVATE COACHING
                         </p>
 
@@ -145,9 +146,9 @@ function PrivateCoaching() {
                         </h1>
 
                         <p className="mt-6 max-w-3xl text-base font-normal leading-[1.7] text-gray-200 sm:text-lg lg:text-[21px]">
-                            Experience the joy of learning and playing sports within your
-                            community, with expert coaches, structured programmes, and
-                            personalised training for kids and adults of all skill
+                            Experience the joy of learning and playing sports within
+                            your community, with expert coaches, structured programmes,
+                            and personalised training for kids and adults of all skill
                             levels—all while skipping the hassle of travelling.
                         </p>
                     </div>
@@ -155,7 +156,7 @@ function PrivateCoaching() {
                     {/* FREE TRIAL FORM */}
                     <div
                         id="free-trial"
-                        className="w-full self-center scroll-mt-28 rounded-[26px] bg-[#f7f7f7] p-6 text-[#09264d] shadow-2xl sm:p-8 lg:p-9"
+                        className="box-border w-full min-w-0 self-center scroll-mt-32 rounded-[26px] bg-[#f7f7f7] p-5 text-[#09264d] shadow-2xl sm:p-7 lg:p-8"
                     >
                         <h2 className="mb-7 text-center text-3xl font-semibold leading-tight sm:text-4xl">
                             Book your <span className="text-orange-500">FREE</span>
@@ -164,14 +165,15 @@ function PrivateCoaching() {
                         </h2>
 
                         {submitted ? (
-                            <div className="min-h-[300px] rounded-md border border-slate-200 bg-white p-5 text-sm leading-6 text-black">
-                                <p className="font-normal text-orange-600">
+                            <div className="min-h-[250px] rounded-md border border-slate-200 bg-white p-5 text-sm font-normal leading-6 text-black">
+                                <p className="text-orange-600">
                                     Thank you for showing interest.
                                 </p>
 
-                                <p className="mt-2 font-normal">
-                                    Our team will contact you shortly, and schedule your trial
-                                    for ({formData.phone}) as per your convenience.
+                                <p className="mt-2">
+                                    Our team will contact you shortly, and schedule
+                                    your trial for ({formData.phone}) as per your
+                                    convenience.
                                 </p>
 
                                 <button
@@ -185,119 +187,142 @@ function PrivateCoaching() {
                         ) : (
                             <form
                                 onSubmit={handleSubmit}
-                                className="space-y-5 text-sm font-normal text-black"
+                                className="grid w-full min-w-0 grid-cols-1 gap-x-5 gap-y-5 text-sm font-normal text-black sm:grid-cols-2"
                             >
-                                {/* NAME + CONTACT */}
-                                <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
-                                    <label className="block font-medium">
+                                {/* FULL NAME */}
+                                <label className="block min-w-0">
+                                    <span className="block font-medium">
                                         Full Name *
-                                        <input
-                                            required
-                                            name="name"
-                                            value={formData.name}
-                                            onChange={handleChange}
-                                            placeholder="Enter full name"
-                                            className="mt-2 h-12 w-full rounded-md border border-gray-300 bg-white px-3 font-normal text-gray-800 outline-none focus:border-orange-500"
-                                        />
-                                    </label>
+                                    </span>
+                                    <input
+                                        required
+                                        name="name"
+                                        value={formData.name}
+                                        onChange={handleChange}
+                                        placeholder="Enter full name"
+                                        className="mt-2 block h-12 w-full min-w-0 box-border rounded-md border border-gray-300 bg-white px-3 font-normal text-gray-800 outline-none focus:border-orange-500 focus:ring-1 focus:ring-orange-500"
+                                    />
+                                </label>
 
-                                    <label className="block font-medium">
+                                {/* CONTACT NUMBER */}
+                                <label className="block min-w-0">
+                                    <span className="block font-medium">
                                         Contact Number *
-                                        <input
-                                            required
-                                            name="phone"
-                                            type="tel"
-                                            value={formData.phone}
-                                            onChange={handleChange}
-                                            placeholder="Enter contact number"
-                                            className="mt-2 h-12 w-full rounded-md border border-gray-300 bg-white px-3 font-normal text-gray-800 outline-none focus:border-orange-500"
-                                        />
-                                    </label>
-                                </div>
+                                    </span>
+                                    <input
+                                        required
+                                        name="phone"
+                                        type="tel"
+                                        value={formData.phone}
+                                        onChange={handleChange}
+                                        placeholder="Enter contact number"
+                                        className="mt-2 block h-12 w-full min-w-0 box-border rounded-md border border-gray-300 bg-white px-3 font-normal text-gray-800 outline-none focus:border-orange-500 focus:ring-1 focus:ring-orange-500"
+                                    />
+                                </label>
 
-                                {/* AGE + EMAIL */}
-                                <div className="grid grid-cols-1 gap-5 sm:grid-cols-[0.7fr_1.8fr]">
-                                    <label className="block font-medium">
+                                {/* AGE */}
+                                <label className="block min-w-0">
+                                    <span className="block font-medium">
                                         Age *
-                                        <input
-                                            required
-                                            name="age"
-                                            type="number"
-                                            min="1"
-                                            value={formData.age}
-                                            onChange={handleChange}
-                                            className="mt-2 h-12 w-full rounded-md border border-gray-300 bg-white px-3 font-normal text-gray-800 outline-none focus:border-orange-500"
-                                        />
-                                    </label>
+                                    </span>
+                                    <input
+                                        required
+                                        name="age"
+                                        type="number"
+                                        min="1"
+                                        value={formData.age}
+                                        onChange={handleChange}
+                                        placeholder="Enter age"
+                                        className="mt-2 block h-12 w-full min-w-0 box-border rounded-md border border-gray-300 bg-white px-3 font-normal text-gray-800 outline-none focus:border-orange-500 focus:ring-1 focus:ring-orange-500"
+                                    />
+                                </label>
 
-                                    <label className="block font-medium">
+                                {/* EMAIL */}
+                                <label className="block min-w-0">
+                                    <span className="block font-medium">
                                         Email ID
-                                        <input
-                                            name="email"
-                                            type="email"
-                                            value={formData.email}
-                                            onChange={handleChange}
-                                            placeholder="(Optional)"
-                                            className="mt-2 h-12 w-full rounded-md border border-gray-300 bg-white px-3 font-normal text-gray-800 outline-none focus:border-orange-500"
-                                        />
-                                    </label>
-                                </div>
+                                    </span>
+                                    <input
+                                        name="email"
+                                        type="email"
+                                        value={formData.email}
+                                        onChange={handleChange}
+                                        placeholder="(Optional)"
+                                        className="mt-2 block h-12 w-full min-w-0 box-border rounded-md border border-gray-300 bg-white px-3 font-normal text-gray-800 outline-none focus:border-orange-500 focus:ring-1 focus:ring-orange-500"
+                                    />
+                                </label>
 
-                                {/* SPORT + LOCATION */}
-                                <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
-                                    <label className="block font-medium">
+                                {/* SPORT */}
+                                <label className="block min-w-0">
+                                    <span className="block font-medium">
                                         Sport Interested *
-                                        <select
-                                            required
-                                            name="sport"
-                                            value={formData.sport}
-                                            onChange={handleChange}
-                                            className="mt-2 h-12 w-full rounded-md border border-gray-300 bg-white px-3 font-normal text-gray-800 outline-none focus:border-orange-500"
-                                        >
-                                            <option value="">—Select the sport</option>
-                                            {sports.map((sport) => (
-                                                <option key={sport} value={sport}>
-                                                    {sport}
-                                                </option>
-                                            ))}
-                                        </select>
-                                    </label>
+                                    </span>
+                                    <select
+                                        required
+                                        name="sport"
+                                        value={formData.sport}
+                                        onChange={handleChange}
+                                        className="mt-2 block h-12 w-full min-w-0 box-border rounded-md border border-gray-300 bg-white px-3 font-normal text-gray-800 outline-none focus:border-orange-500 focus:ring-1 focus:ring-orange-500"
+                                    >
+                                        <option value="">
+                                            —Select the sport
+                                        </option>
+                                        {sports.map((sport) => (
+                                            <option
+                                                key={sport.name}
+                                                value={sport.name}
+                                            >
+                                                {sport.name}
+                                            </option>
+                                        ))}
+                                    </select>
+                                </label>
 
-                                    <label className="block font-medium">
+                                {/* LOCATION */}
+                                <label className="block min-w-0">
+                                    <span className="block font-medium">
                                         Location *
-                                        <input
-                                            required
-                                            name="location"
-                                            value={formData.location}
-                                            onChange={handleChange}
-                                            placeholder="Enter your location"
-                                            className="mt-2 h-12 w-full rounded-md border border-gray-300 bg-white px-3 font-normal text-gray-800 outline-none focus:border-orange-500"
-                                        />
-                                    </label>
-                                </div>
+                                    </span>
+                                    <input
+                                        required
+                                        name="location"
+                                        value={formData.location}
+                                        onChange={handleChange}
+                                        placeholder="Enter your location"
+                                        className="mt-2 block h-12 w-full min-w-0 box-border rounded-md border border-gray-300 bg-white px-3 font-normal text-gray-800 outline-none focus:border-orange-500 focus:ring-1 focus:ring-orange-500"
+                                    />
+                                </label>
 
                                 {/* PROGRAMME */}
-                                <label className="block font-medium">
-                                    Programme Interested *
+                                <label className="block min-w-0 sm:col-span-2">
+                                    <span className="block font-medium">
+                                        Programme Interested *
+                                    </span>
                                     <select
                                         required
                                         name="programme"
                                         value={formData.programme}
                                         onChange={handleChange}
-                                        className="mt-2 h-12 w-full rounded-md border border-gray-300 bg-white px-3 font-normal text-gray-800 outline-none focus:border-orange-500"
+                                        className="mt-2 block h-12 w-full min-w-0 box-border rounded-md border border-gray-300 bg-white px-3 font-normal text-gray-800 outline-none focus:border-orange-500 focus:ring-1 focus:ring-orange-500"
                                     >
-                                        <option value="">—Select the programme</option>
+                                        <option value="">
+                                            —Select the programme
+                                        </option>
                                         {programmes.map((programme) => (
-                                            <option key={programme.number} value={programme.title}>
+                                            <option
+                                                key={programme.number}
+                                                value={programme.title}
+                                            >
                                                 {programme.title}
                                             </option>
                                         ))}
                                     </select>
                                 </label>
 
+                                {/* SUBMIT BUTTON */}
                                 <button
                                     type="submit"
-                                    className="w-full rounded-md bg-[#06234b] py-3.5 font-semibold text-white transition hover:bg-orange-500"
+                                    className="w-full rounded-md bg-[#06234b] py-3.5 font-semibold text-white transition hover:bg-orange-500 sm:col-span-2"
                                 >
                                     Send
                                 </button>
@@ -310,7 +335,7 @@ function PrivateCoaching() {
             {/* EXPLORE OUR SPORTS */}
             <section className="bg-[#ff8900] px-5 py-12 text-white">
                 <div className="mx-auto max-w-[1320px]">
-                    <p className="text-center text-xs font-bold tracking-[0.35em]">
+                    <p className="text-center text-xs font-extrabold tracking-[0.35em]">
                         EXPLORE OUR SPORTS
                     </p>
 
@@ -319,17 +344,17 @@ function PrivateCoaching() {
                     </h2>
 
                     <div className="mt-8 grid grid-cols-2 gap-4 sm:grid-cols-4 lg:grid-cols-8">
-                        {sports.map((sport, index) => (
+                        {sports.map((sport) => (
                             <div
-                                key={sport}
-                                className="flex min-h-[130px] flex-col items-center justify-center rounded-lg bg-white px-3 py-4 text-[#09264d]"
+                                key={sport.name}
+                                className="group flex min-h-[130px] flex-col items-center justify-center rounded-lg bg-white px-3 py-4 text-[#09264d] shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-lg"
                             >
-                                <span className="font-oswald text-3xl font-bold text-orange-500">
-                                    0{index + 1}
+                                <span className="text-[44px] leading-none transition-transform duration-300 group-hover:scale-110">
+                                    {sport.icon}
                                 </span>
 
-                                <p className="mt-3 text-center text-xs font-bold tracking-wider">
-                                    {sport}
+                                <p className="mt-4 text-center text-xs font-bold tracking-wider">
+                                    {sport.name}
                                 </p>
                             </div>
                         ))}
@@ -349,13 +374,14 @@ function PrivateCoaching() {
                     </h2>
 
                     <p className="mx-auto mt-7 max-w-6xl text-center text-base font-normal leading-8 text-slate-700">
-                        Finding time for sports and fitness can be challenging with busy
-                        work schedules, school commitments, and everyday
-                        responsibilities. Our personalised coaching programmes for kids
-                        and adults bring expert coaches across multiple sports to your
-                        preferred location, at a time that works for you. Skip the hassle
-                        of travelling, enjoy training tailored to your goals and skill
-                        level, and stay active, healthy, and fit—on your own terms.
+                        Finding time for sports and fitness can be challenging with
+                        busy work schedules, school commitments, and everyday
+                        responsibilities. Our personalised coaching programmes for
+                        kids and adults bring expert coaches across multiple sports
+                        to your preferred location, at a time that works for you.
+                        Skip the hassle of travelling, enjoy training tailored to
+                        your goals and skill level, and stay active, healthy, and
+                        fit—on your own terms.
                     </p>
                 </div>
             </section>
@@ -376,11 +402,11 @@ function PrivateCoaching() {
                                 {programme.title}
                             </h3>
 
-                            <p className="mt-2 text-sm font-semibold uppercase tracking-wider text-orange-500">
+                            <p className="mt-2 text-sm font-extrabold uppercase tracking-wider text-orange-500">
                                 {programme.level}
                             </p>
 
-                            <p className="mt-5 flex-1 text-sm font-normal leading-7 text-slate-600">
+                            <p className="mt-5 flex-1 text-sm font-medium leading-7 text-slate-600">
                                 {programme.description}
                             </p>
 
@@ -388,9 +414,11 @@ function PrivateCoaching() {
                                 {programme.benefits.map((benefit) => (
                                     <li
                                         key={benefit}
-                                        className="flex items-start gap-3 text-sm font-normal leading-6 text-slate-700"
+                                        className="flex items-start gap-3 text-sm font-semibold leading-6 text-slate-700"
                                     >
-                                        <span className="font-bold text-orange-500">✓</span>
+                                        <span className="font-bold text-orange-500">
+                                            ✓
+                                        </span>
                                         <span>{benefit}</span>
                                     </li>
                                 ))}
@@ -398,7 +426,7 @@ function PrivateCoaching() {
 
                             <a
                                 href="#free-trial"
-                                className="mt-8 bg-[#09264d] px-4 py-3 text-center text-xs font-bold tracking-wider text-white transition hover:bg-orange-500"
+                                className="mt-8 bg-[#09264d] px-4 py-3 text-center text-xs font-extrabold tracking-wider text-white transition hover:bg-orange-500"
                             >
                                 {programme.button}
                             </a>
@@ -410,7 +438,7 @@ function PrivateCoaching() {
             {/* BOOKING PROCESS */}
             <section className="bg-white px-6 py-16">
                 <div className="mx-auto max-w-6xl">
-                    <p className="text-center text-xs font-bold tracking-[0.35em] text-orange-500">
+                    <p className="text-center text-xs font-extrabold tracking-[0.35em] text-orange-500">
                         GET STARTED
                     </p>
 
@@ -444,11 +472,11 @@ function PrivateCoaching() {
                                     {step.number}
                                 </div>
 
-                                <h3 className="mt-5 text-lg font-bold text-[#09264d]">
+                                <h3 className="mt-5 text-lg font-extrabold text-[#09264d]">
                                     {step.title}
                                 </h3>
 
-                                <p className="mt-3 text-sm font-normal leading-7 text-slate-600">
+                                <p className="mt-3 text-sm font-medium leading-7 text-slate-600">
                                     {step.description}
                                 </p>
                             </div>
@@ -460,7 +488,7 @@ function PrivateCoaching() {
             {/* WHY CHOOSE FIRSTMOVE */}
             <section className="bg-[#09264d] px-6 py-16 text-white">
                 <div className="mx-auto max-w-[1320px]">
-                    <p className="text-center text-xs font-bold tracking-[0.35em] text-orange-400">
+                    <p className="text-center text-xs font-extrabold tracking-[0.35em] text-orange-400">
                         WHY CHOOSE FIRSTMOVE
                     </p>
 
@@ -483,7 +511,7 @@ function PrivateCoaching() {
                                     0{index + 1}
                                 </span>
 
-                                <h3 className="mt-5 text-lg font-semibold leading-7">
+                                <h3 className="mt-5 text-lg font-bold leading-7">
                                     {item}
                                 </h3>
                             </div>
@@ -495,7 +523,7 @@ function PrivateCoaching() {
             {/* TESTIMONIALS */}
             <section className="bg-white px-6 py-20">
                 <div className="mx-auto max-w-[1320px]">
-                    <p className="text-center text-xs font-bold tracking-[0.35em] text-orange-500">
+                    <p className="text-center text-xs font-extrabold tracking-[0.35em] text-orange-500">
                         SUCCESS STORIES
                     </p>
 
@@ -513,16 +541,16 @@ function PrivateCoaching() {
                                     “
                                 </span>
 
-                                <p className="flex-1 text-base font-normal leading-8 text-slate-700">
+                                <p className="flex-1 text-base font-medium leading-8 text-slate-700">
                                     {testimonial.quote}
                                 </p>
 
                                 <div className="mt-7 border-t border-slate-200 pt-5">
-                                    <h3 className="font-bold text-[#09264d]">
+                                    <h3 className="font-extrabold text-[#09264d]">
                                         {testimonial.name}
                                     </h3>
 
-                                    <p className="mt-1 text-sm font-medium text-orange-500">
+                                    <p className="mt-1 text-sm font-semibold text-orange-500">
                                         {testimonial.category}
                                     </p>
                                 </div>
@@ -539,22 +567,22 @@ function PrivateCoaching() {
                         Ready to Make Your First Move?
                     </h2>
 
-                    <p className="mx-auto mt-5 max-w-2xl text-base font-normal leading-7">
-                        Find the right sport, coach or programme for you and take your
-                        game to the next level.
+                    <p className="mx-auto mt-5 max-w-2xl text-base font-semibold leading-7">
+                        Find the right sport, coach or programme for you and take
+                        your game to the next level.
                     </p>
 
                     <div className="mt-8 flex flex-wrap justify-center gap-4">
                         <a
                             href="#free-trial"
-                            className="bg-[#09264d] px-8 py-4 text-sm font-bold text-white transition hover:bg-white hover:text-[#09264d]"
+                            className="bg-[#09264d] px-8 py-4 text-sm font-extrabold text-white transition hover:bg-white hover:text-[#09264d]"
                         >
                             GET STARTED
                         </a>
 
                         <a
                             href="#free-trial"
-                            className="border-2 border-white px-8 py-4 text-sm font-bold text-white transition hover:bg-white hover:text-[#09264d]"
+                            className="border-2 border-white px-8 py-4 text-sm font-extrabold text-white transition hover:bg-white hover:text-[#09264d]"
                         >
                             CONTACT US
                         </a>
