@@ -6,13 +6,20 @@ import Footer from '../components/Footer';
 const imageBase = `${import.meta.env.BASE_URL}images/private-coaching/`;
 
 const sports = [
+    { name: 'ATHLETICS', icon: '🏃' },
     { name: 'BADMINTON', icon: '🏸' },
     { name: 'BASKETBALL', icon: '🏀' },
     { name: 'CHESS', icon: '♟️' },
     { name: 'CRICKET', icon: '🏏' },
     { name: 'FOOTBALL', icon: '⚽' },
+    { name: 'GYMNASTICS', icon: '🤸' },
+    { name: 'JUDO', icon: '🥋' },
+    { name: 'PADEL', icon: '🎾' },
+    { name: 'PICKLEBALL', icon: '🏓' },
+    { name: 'SKATING', icon: '⛸️' },
     { name: 'SWIMMING', icon: '🏊' },
     { name: 'TABLE TENNIS', icon: '🏓' },
+    { name: 'TAEKWONDO', icon: '🥋' },
     { name: 'TENNIS', icon: '🎾' },
 ];
 
@@ -46,42 +53,6 @@ const programmes = [
             'Tournament preparation and competitive exposure',
         ],
         button: 'EXPLORE COMPETITIVE PROGRAMME',
-    },
-    {
-        number: '03',
-        title: 'Sports Events for Communities',
-        level: 'Elite Programme',
-        description:
-            'Transform your community into a vibrant sporting destination with professionally organised leagues, tournaments, and sports festivals. From player registrations to grand finales, FirstMove manages every detail to deliver exciting, competitive, and memorable sporting experiences for residents.',
-        benefits: [
-            'Community leagues, tournaments and sports festivals',
-            'Player registrations, team formations and exciting auctions',
-            'Opening ceremonies, event hosts and live announcements',
-            'Professional referees, umpires and live scoring',
-            'Customised jerseys, medals, trophies and prize ceremonies',
-        ],
-        button: 'EXPLORE ELITE PROGRAMME',
-    },
-];
-
-const testimonials = [
-    {
-        name: 'Dev Tendulkar',
-        category: 'Adult’s Tennis',
-        quote:
-            'Finding a coach who understands my schedule was impossible until FirstMove. My tennis game has improved massively in just three months.',
-    },
-    {
-        name: 'Sakshi Tendulkar',
-        category: 'Kid’s Badminton',
-        quote:
-            'The coaching is incredibly structured. My daughter looks forward to her badminton sessions every week, and her footwork is visibly better.',
-    },
-    {
-        name: 'Priyesh Gupta',
-        category: 'Adult’s Swimming',
-        quote:
-            'I wanted to relearn swimming after a 10-year break. The coach was patient, verified, and made the whole process convenient.',
     },
 ];
 
@@ -118,7 +89,6 @@ function PrivateCoaching() {
 
             {/* HERO SECTION */}
             <section className="relative isolate overflow-hidden bg-[#071a30] text-white">
-                {/* Background image */}
                 <div
                     className="absolute inset-0 -z-20 bg-cover bg-center"
                     style={{
@@ -126,13 +96,8 @@ function PrivateCoaching() {
                     }}
                 />
 
-                {/* Dark overlay */}
                 <div className="absolute inset-0 -z-10 bg-[#06182c]/65" />
 
-                {/* 
-                    Extra top spacing keeps the hero content below
-                    the fixed website navbar.
-                */}
                 <div className="mx-auto grid w-full max-w-[1440px] grid-cols-1 items-center gap-10 px-6 pt-36 pb-14 md:grid-cols-[minmax(0,1.1fr)_minmax(0,0.9fr)] md:px-10 lg:gap-14 lg:pt-36 lg:pb-16">
 
                     {/* LEFT SIDE CONTENT */}
@@ -167,18 +132,28 @@ function PrivateCoaching() {
                         {submitted ? (
                             <div className="min-h-[250px] rounded-md border border-slate-200 bg-white p-5 text-sm font-normal leading-6 text-black">
                                 <p className="text-orange-600">
-                                    Thank you for showing interest.
+                                    Thank you, {formData.name}!
                                 </p>
 
                                 <p className="mt-2">
-                                    Our team will contact you shortly, and schedule
-                                    your trial for ({formData.phone}) as per your
-                                    convenience.
+                                    Our team will contact you shortly to schedule your
+                                    free trial as per your convenience.
                                 </p>
 
                                 <button
                                     type="button"
-                                    onClick={() => setSubmitted(false)}
+                                    onClick={() => {
+                                        setFormData({
+                                            name: '',
+                                            phone: '',
+                                            age: '',
+                                            email: '',
+                                            sport: '',
+                                            location: '',
+                                            programme: '',
+                                        });
+                                        setSubmitted(false);
+                                    }}
                                     className="mt-6 font-medium text-[#09264d] underline"
                                 >
                                     Submit another enquiry
@@ -240,14 +215,15 @@ function PrivateCoaching() {
                                 {/* EMAIL */}
                                 <label className="block min-w-0">
                                     <span className="block font-medium">
-                                        Email ID
+                                        Email ID *
                                     </span>
                                     <input
+                                        required
                                         name="email"
                                         type="email"
                                         value={formData.email}
                                         onChange={handleChange}
-                                        placeholder="(Optional)"
+                                        placeholder="Enter email address"
                                         className="mt-2 block h-12 w-full min-w-0 box-border rounded-md border border-gray-300 bg-white px-3 font-normal text-gray-800 outline-none focus:border-orange-500 focus:ring-1 focus:ring-orange-500"
                                     />
                                 </label>
@@ -268,10 +244,7 @@ function PrivateCoaching() {
                                             —Select the sport
                                         </option>
                                         {sports.map((sport) => (
-                                            <option
-                                                key={sport.name}
-                                                value={sport.name}
-                                            >
+                                            <option key={sport.name} value={sport.name}>
                                                 {sport.name}
                                             </option>
                                         ))}
@@ -288,7 +261,7 @@ function PrivateCoaching() {
                                         name="location"
                                         value={formData.location}
                                         onChange={handleChange}
-                                        placeholder="Enter your location"
+                                        placeholder="Enter Location, Society Name or Venue Name"
                                         className="mt-2 block h-12 w-full min-w-0 box-border rounded-md border border-gray-300 bg-white px-3 font-normal text-gray-800 outline-none focus:border-orange-500 focus:ring-1 focus:ring-orange-500"
                                     />
                                 </label>
@@ -386,9 +359,9 @@ function PrivateCoaching() {
                 </div>
             </section>
 
-            {/* THREE PROGRAMMES */}
+            {/* TWO PROGRAMMES */}
             <section className="bg-[#f7f8fa] px-6 pb-20">
-                <div className="mx-auto grid max-w-[1320px] gap-7 lg:grid-cols-3">
+                <div className="mx-auto grid max-w-[1320px] gap-7 lg:grid-cols-2">
                     {programmes.map((programme) => (
                         <article
                             key={programme.number}
@@ -520,46 +493,6 @@ function PrivateCoaching() {
                 </div>
             </section>
 
-            {/* TESTIMONIALS */}
-            <section className="bg-white px-6 py-20">
-                <div className="mx-auto max-w-[1320px]">
-                    <p className="text-center text-xs font-extrabold tracking-[0.35em] text-orange-500">
-                        SUCCESS STORIES
-                    </p>
-
-                    <h2 className="mt-3 text-center font-oswald text-4xl font-bold uppercase text-[#09264d]">
-                        Testimonials
-                    </h2>
-
-                    <div className="mt-12 grid gap-7 md:grid-cols-3">
-                        {testimonials.map((testimonial) => (
-                            <article
-                                key={testimonial.name}
-                                className="flex flex-col border border-slate-200 bg-[#f8f9fb] p-8"
-                            >
-                                <span className="font-serif text-5xl font-bold text-orange-500">
-                                    “
-                                </span>
-
-                                <p className="flex-1 text-base font-medium leading-8 text-slate-700">
-                                    {testimonial.quote}
-                                </p>
-
-                                <div className="mt-7 border-t border-slate-200 pt-5">
-                                    <h3 className="font-extrabold text-[#09264d]">
-                                        {testimonial.name}
-                                    </h3>
-
-                                    <p className="mt-1 text-sm font-semibold text-orange-500">
-                                        {testimonial.category}
-                                    </p>
-                                </div>
-                            </article>
-                        ))}
-                    </div>
-                </div>
-            </section>
-
             {/* FINAL CTA */}
             <section className="bg-orange-500 px-6 py-16 text-center text-white">
                 <div className="mx-auto max-w-4xl">
@@ -572,19 +505,12 @@ function PrivateCoaching() {
                         your game to the next level.
                     </p>
 
-                    <div className="mt-8 flex flex-wrap justify-center gap-4">
+                    <div className="mt-8 flex justify-center">
                         <a
                             href="#free-trial"
-                            className="bg-[#09264d] px-8 py-4 text-sm font-extrabold text-white transition hover:bg-white hover:text-[#09264d]"
+                            className="bg-[#09264d] px-10 py-4 text-sm font-extrabold text-white transition hover:bg-white hover:text-[#09264d]"
                         >
-                            GET STARTED
-                        </a>
-
-                        <a
-                            href="#free-trial"
-                            className="border-2 border-white px-8 py-4 text-sm font-extrabold text-white transition hover:bg-white hover:text-[#09264d]"
-                        >
-                            CONTACT US
+                            BOOK A FREE TRIAL
                         </a>
                     </div>
                 </div>

@@ -1,3 +1,4 @@
+
 export const services = [
   {
     id: '01',
@@ -15,17 +16,9 @@ export const services = [
   },
   {
     id: '03',
-    title: 'Adult-Specific Training',
+    title: 'Sports Venue Management',
     description:
-      'Specialized conditioning and sport-specific programs designed around the adult athlete — focus on biomechanics, technique, and match readiness.',
-    icon: 'Dumbbell',
-  },
-  {
-    id: '04',
-    title: 'Curated Community Events & IPs',
-    description:
-      'Custom tournaments, community leagues, corporate sport days, and proprietary sporting events that bring athletes and fans together.',
-    icon: 'Trophy',
+      'Conceptualise, Build, Operate and Market sports venues.',
+    icon: 'Building2',
   },
 ];
-

@@ -2,9 +2,17 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import {
-    Trophy, Users, Medal, ChartNoAxesColumnIncreasing,
-    Target, Lightbulb, Compass, Award, ArrowRight,
-    GraduationCap
+    Trophy,
+    Users,
+    Medal,
+    ChartNoAxesColumnIncreasing,
+    Target,
+    Lightbulb,
+    Compass,
+    Award,
+    GraduationCap,
+    BookOpen,
+    HeartHandshake,
 } from 'lucide-react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
@@ -12,69 +20,106 @@ import Footer from '../components/Footer';
 const benefits = [
     {
         icon: Medal,
-        title: 'Expert Coaches',
-        description: 'Trained coaches who provide structured sports training.'
+        title: 'Expert Sports Coaches',
+        description:
+            'Experienced and verified coaches bring professional knowledge, structured methods and individual attention to every training session.',
+    },
+    {
+        icon: BookOpen,
+        title: 'Structured Curriculum',
+        description:
+            'Age-appropriate training programmes help students build sporting fundamentals, develop techniques and progress with confidence.',
     },
     {
         icon: Users,
-        title: 'Build a Team',
-        description: 'Help students develop together and create stronger school teams.'
-    },
-    {
-        icon: Trophy,
-        title: 'Tournaments',
-        description: 'Support students through competitive sporting opportunities.'
+        title: 'Teamwork & Character',
+        description:
+            'Sports encourage collaboration, discipline, leadership and respect while helping students develop stronger connections with peers.',
     },
     {
         icon: ChartNoAxesColumnIncreasing,
-        title: 'Evaluation',
-        description: 'Track student development and identify areas for improvement.'
+        title: 'Progress Tracking',
+        description:
+            'Regular assessments and clear learning milestones help schools understand student development and identify areas for improvement.',
     },
     {
-        icon: Target,
-        title: 'Results',
-        description: 'Monitor progress and create a clear development journey.'
-    }
+        icon: Trophy,
+        title: 'Competitive Exposure',
+        description:
+            'Students get opportunities to participate, challenge themselves and experience the values of healthy competition.',
+    },
 ];
 
 const sports = [
-    { name: 'Badminton', icon: '🏸' },
-    { name: 'Basketball', icon: '🏀' },
-    { name: 'Chess', icon: '♟' },
-    { name: 'Cricket', icon: '🏏' },
-    { name: 'Football', icon: '⚽' },
-    { name: 'Swimming', icon: '🏊' },
-    { name: 'Table Tennis', icon: '🏓' },
-    { name: 'Tennis', icon: '🎾' }
+    { name: 'ATHLETICS', icon: '🏃' },
+    { name: 'BADMINTON', icon: '🏸' },
+    { name: 'BASKETBALL', icon: '🏀' },
+    { name: 'CHESS', icon: '♟️' },
+    { name: 'CRICKET', icon: '🏏' },
+    { name: 'FOOTBALL', icon: '⚽' },
+    { name: 'GYMNASTICS', icon: '🤸' },
+    { name: 'JUDO', icon: '🥋' },
+    { name: 'PADEL', icon: '🎾' },
+    { name: 'PICKLEBALL', icon: '🏓' },
+    { name: 'SKATING', icon: '⛸️' },
+    { name: 'SWIMMING', icon: '🏊' },
+    { name: 'TABLE TENNIS', icon: '🏓' },
+    { name: 'TAEKWONDO', icon: '🥋' },
+    { name: 'TENNIS', icon: '🎾' },
 ];
 
-const guidance = [
+const approach = [
     {
         icon: Lightbulb,
-        title: 'Understanding Student Interests',
-        description: 'Discover individual interests and encourage students to explore sports they genuinely enjoy.'
+        title: 'Understand the School',
+        description:
+            'We begin by understanding the school’s requirements, student demographics, available facilities and sporting objectives.',
     },
     {
         icon: Compass,
-        title: 'Identifying Suitable Sports',
-        description: 'Explore different sporting disciplines and find the right opportunities for every student.'
+        title: 'Design the Programme',
+        description:
+            'We develop an age-appropriate sports programme based on the school’s needs, available infrastructure and student interests.',
     },
     {
         icon: Target,
-        title: 'Guidance Based on Strengths',
-        description: 'Understand student abilities and create personalised sporting development pathways.'
+        title: 'Train with Purpose',
+        description:
+            'Our coaches conduct structured sessions focused on skill development, participation, fitness and sporting fundamentals.',
     },
     {
         icon: Award,
-        title: 'Exploring Sporting Opportunities',
-        description: 'Connect students with opportunities to develop, participate and compete.'
-    }
+        title: 'Evaluate & Improve',
+        description:
+            'Regular assessments and feedback help monitor progress, recognise achievements and continuously improve the programme.',
+    },
+];
+
+const partnershipCards = [
+    {
+        icon: GraduationCap,
+        title: 'Schools & Institutions',
+        description:
+            'Working alongside educational institutions to make structured sports programmes an integral part of student development.',
+    },
+    {
+        icon: Users,
+        title: 'Coaches & Sports Professionals',
+        description:
+            'Building strong coaching teams that bring experience, commitment and professional guidance to every programme.',
+    },
+    {
+        icon: HeartHandshake,
+        title: 'Students & Communities',
+        description:
+            'Encouraging participation, building sporting connections and introducing more people to the world of sports.',
+    },
 ];
 
 const SchoolSectionHeading = ({
     label,
     title,
-    light = false
+    light = false,
 }: {
     label: string;
     title: string;
@@ -100,7 +145,6 @@ const Schools: React.FC = () => {
 
                 {/* HERO */}
                 <section className="relative min-h-[580px] md:min-h-[620px] flex items-center overflow-hidden bg-navy">
-
                     <img
                         src="https://images.unsplash.com/photo-1529390079861-591de354faf5?auto=format&fit=crop&w=2000&q=85"
                         alt="Students participating in school sports"
@@ -136,44 +180,13 @@ const Schools: React.FC = () => {
                                 your students.
                             </p>
 
-                            <div className="flex flex-wrap gap-4">
-                                <a href="#school-demo" className="btn-orange">
-                                    Book a Free Demo <ArrowRight className="inline ml-2" size={16} />
-                                </a>
-
-                                <a
-                                    href={`${import.meta.env.BASE_URL}?page=coaching`}
-                                    className="btn-ghost"
-                                >
-                                    For Private Coaching
-                                </a>
-                            </div>
+                            <a
+                                href="mailto:info@firstmove.co.in?subject=School%20Sports%20Enquiry"
+                                className="btn-orange inline-flex items-center"
+                            >
+                                Contact Us
+                            </a>
                         </motion.div>
-                    </div>
-                </section>
-
-                {/* EXPERT SPORTS STRIP */}
-                <section className="bg-navy text-white py-8 border-t border-white/10">
-                    <div className="max-w-7xl mx-auto px-6">
-                        <p className="section-label mb-5">Expert-led coaching for</p>
-
-                        <div className="grid grid-cols-1 sm:grid-cols-3 gap-5 text-sm">
-                            <p>
-                                <span className="text-brand-orange font-bold">TEAM SPORTS:</span>
-                                <span className="text-white/75 ml-2">Basketball, Cricket, Football</span>
-                            </p>
-                            <p>
-                                <span className="text-brand-orange font-bold">RACQUET SPORTS:</span>
-                                <span className="text-white/75 ml-2">Badminton, Padel, Pickleball, Squash, Table Tennis, Tennis</span>
-                            </p>
-                            <p>
-                                <span className="text-brand-orange font-bold">CHESS & SKATING</span>
-                            </p>
-                        </div>
-
-                        <p className="text-white/55 text-[10px] sm:text-xs uppercase tracking-widest mt-8 leading-relaxed">
-                            Certified on-campus coaches · Structured safety standards · Background-checked professionals
-                        </p>
                     </div>
                 </section>
 
@@ -182,10 +195,10 @@ const Schools: React.FC = () => {
                     <div className="max-w-7xl mx-auto px-6">
                         <SchoolSectionHeading
                             label="Why FirstMove"
-                            title="School Sports Program"
+                            title="A Better Approach to School Sports"
                         />
 
-                        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-5">
+                        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
                             {benefits.map((item, index) => {
                                 const Icon = item.icon;
 
@@ -196,7 +209,7 @@ const Schools: React.FC = () => {
                                         whileInView={{ opacity: 1, y: 0 }}
                                         viewport={{ once: true }}
                                         transition={{ delay: index * 0.1 }}
-                                        className="bg-white border border-gray-100 rounded-xl p-6 text-center hover:-translate-y-2 hover:shadow-xl transition-all duration-300"
+                                        className="bg-white border border-gray-100 rounded-xl p-7 text-center hover:-translate-y-2 hover:shadow-xl transition-all duration-300"
                                     >
                                         <div className="w-12 h-12 rounded-full bg-orange-50 text-brand-orange flex items-center justify-center mx-auto mb-5">
                                             <Icon size={24} />
@@ -217,7 +230,7 @@ const Schools: React.FC = () => {
                 </section>
 
                 {/* SPORTS WE OFFER */}
-                <section className="bg-navy py-20">
+                <section className="bg-navy py-16 md:py-20">
                     <div className="max-w-7xl mx-auto px-6">
                         <SchoolSectionHeading
                             label="Explore Our Sports"
@@ -225,21 +238,25 @@ const Schools: React.FC = () => {
                             light
                         />
 
-                        <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-8 gap-3">
+                        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 xl:grid-cols-5 gap-4 md:gap-5">
                             {sports.map((sport, index) => (
                                 <motion.div
                                     key={sport.name}
-                                    initial={{ opacity: 0, y: 20 }}
+                                    initial={{ opacity: 0, y: 15 }}
                                     whileInView={{ opacity: 1, y: 0 }}
                                     viewport={{ once: true }}
-                                    transition={{ delay: index * 0.06 }}
-                                    className="bg-white rounded-xl p-4 flex flex-col items-center justify-center min-h-[125px] hover:-translate-y-2 transition-transform duration-300"
+                                    transition={{ delay: index * 0.04 }}
+                                    className="bg-white rounded-xl px-3 py-5 flex flex-col items-center justify-center min-h-[120px] md:min-h-[130px] hover:-translate-y-1.5 hover:shadow-lg transition-all duration-300"
                                 >
-                                    <span className="font-poppins text-[9px] sm:text-[10px] font-bold text-brand-orange tracking-wider uppercase text-center mb-4">
+                                    <span className="font-poppins text-[10px] sm:text-xs font-bold text-brand-orange tracking-wider uppercase text-center mb-3">
                                         {sport.name}
                                     </span>
 
-                                    <span className="text-4xl" role="img" aria-label={sport.name}>
+                                    <span
+                                        className="text-2xl md:text-3xl"
+                                        role="img"
+                                        aria-label={sport.name}
+                                    >
                                         {sport.icon}
                                     </span>
                                 </motion.div>
@@ -248,26 +265,26 @@ const Schools: React.FC = () => {
                     </div>
                 </section>
 
-                {/* SPORTS COUNSELLING */}
+                {/* OUR APPROACH */}
                 <section className="bg-white py-20">
                     <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
 
                         <div>
-                            <span className="section-label">Guidance & Development</span>
+                            <span className="section-label">Our Approach</span>
 
                             <h2 className="font-oswald text-navy text-4xl md:text-5xl mb-5">
-                                Sports Counselling
+                                Building a Stronger Sporting Foundation
                             </h2>
 
                             <p className="font-roboto text-gray-600 leading-relaxed mb-9">
-                                We help schools and students identify suitable sporting
-                                pathways. By understanding student interests and evaluating
-                                their strengths, our experts provide tailored guidance to
-                                support a long-term, fulfilling sports journey.
+                                Every school has different needs, students and sporting
+                                aspirations. Our approach focuses on understanding those needs
+                                and delivering structured sports programmes that encourage
+                                participation, skill development and long-term growth.
                             </p>
 
                             <div className="space-y-7">
-                                {guidance.map((item) => {
+                                {approach.map((item) => {
                                     const Icon = item.icon;
 
                                     return (
@@ -291,119 +308,97 @@ const Schools: React.FC = () => {
                             </div>
                         </div>
 
-                        <div className="relative">
+                        <motion.div
+                            initial={{ opacity: 0, x: 30 }}
+                            whileInView={{ opacity: 1, x: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 0.6 }}
+                            className="relative"
+                        >
                             <img
                                 src="https://images.unsplash.com/photo-1574629810360-7efbbe195018?auto=format&fit=crop&w=1000&q=85"
                                 alt="Sports training and coaching"
                                 className="w-full h-[380px] md:h-[540px] object-cover rounded-2xl shadow-xl"
                             />
+
                             <div className="absolute -bottom-5 -left-5 bg-brand-orange text-white p-5 rounded-xl hidden md:block">
                                 <GraduationCap size={30} />
-                                <p className="font-oswald text-xl mt-2">Growing Through Sport</p>
+                                <p className="font-oswald text-xl mt-2">
+                                    Growing Through Sport
+                                </p>
                             </div>
-                        </div>
+                        </motion.div>
                     </div>
                 </section>
 
-                {/* COACH TESTIMONIAL */}
+                {/* OUR PARTNERS */}
                 <section className="bg-[#F8F8F9] py-20">
-                    <div className="max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
-
-                        <img
-                            src="https://images.unsplash.com/photo-1552674605-db6ffd4facb5?auto=format&fit=crop&w=900&q=85"
-                            alt="Sports coach portrait"
-                            className="w-full h-[330px] md:h-[390px] object-cover rounded-xl"
-                        />
-
-                        <div>
-                            <span className="section-label">Coach Experience</span>
-
-                            <h2 className="font-oswald text-brand-orange text-4xl mb-2">
-                                Dipti Singh
-                            </h2>
-
-                            <p className="text-gray-500 font-roboto mb-7">
-                                Sr. Padel Coach, JBCN - Oshiwara
-                            </p>
-
-                            <div className="text-5xl text-navy font-oswald leading-none">“</div>
-
-                            <p className="font-roboto text-gray-600 leading-relaxed">
-                                A dedicated coaching environment helps students develop
-                                confidence, discipline and a lifelong connection with sports.
-                                Every student deserves the opportunity to discover and grow
-                                through the right sporting pathway.
-                            </p>
-
-                            <p className="text-xs text-gray-400 mt-4">
-                                Sample testimonial text – replace with Dipti Singh's approved
-                                original testimonial before publishing.
-                            </p>
-                        </div>
-                    </div>
-                </section>
-
-                {/* SCHOOL PARTNERS */}
-                <section className="bg-white py-16">
                     <div className="max-w-7xl mx-auto px-6">
                         <SchoolSectionHeading
-                            label="Our School Partners"
+                            label="Our Partners"
                             title="Growing Together"
                         />
 
-                        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4">
-                            {['Parel', 'Chembur', 'Oshiwara', 'Parel', 'Chembur', 'Oshiwara'].map((place, index) => (
-                                <div
-                                    key={`${place}-${index}`}
-                                    className="bg-gray-50 border border-gray-100 rounded-xl min-h-[110px] flex flex-col items-center justify-center"
-                                >
-                                    <GraduationCap size={28} className="text-brand-orange mb-2" />
-                                    <span className="font-oswald text-navy text-lg">FirstMove</span>
-                                    <span className="font-poppins text-gray-400 text-[10px] uppercase tracking-widest">
-                                        {place}
-                                    </span>
-                                </div>
-                            ))}
-                        </div>
-
-                        <p className="text-center text-xs text-gray-400 mt-5">
-                            Replace these placeholders with approved school partner logos.
+                        <p className="font-roboto text-gray-600 text-center max-w-3xl mx-auto leading-relaxed mb-12">
+                            Strong partnerships make meaningful sporting experiences
+                            possible. We work together with schools, coaches and communities
+                            to bring structured sports programmes closer to students and
+                            encourage a lasting connection with sports.
                         </p>
+
+                        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                            {partnershipCards.map((item, index) => {
+                                const Icon = item.icon;
+
+                                return (
+                                    <motion.div
+                                        key={item.title}
+                                        initial={{ opacity: 0, y: 25 }}
+                                        whileInView={{ opacity: 1, y: 0 }}
+                                        viewport={{ once: true }}
+                                        transition={{ delay: index * 0.12 }}
+                                        className="bg-white border border-gray-100 rounded-xl p-8 text-center hover:-translate-y-2 hover:shadow-xl transition-all duration-300"
+                                    >
+                                        <div className="w-14 h-14 rounded-full bg-orange-50 text-brand-orange flex items-center justify-center mx-auto mb-5">
+                                            <Icon size={27} />
+                                        </div>
+
+                                        <h3 className="font-oswald text-navy text-2xl mb-3">
+                                            {item.title}
+                                        </h3>
+
+                                        <p className="font-roboto text-gray-500 text-sm leading-relaxed">
+                                            {item.description}
+                                        </p>
+                                    </motion.div>
+                                );
+                            })}
+                        </div>
                     </div>
                 </section>
 
-                {/* FREE DEMO CTA */}
-                <section id="school-demo" className="bg-brand-orange py-20 text-center">
+                {/* CONTACT CTA */}
+                <section className="bg-brand-orange py-20 text-center">
                     <div className="max-w-3xl mx-auto px-6">
-
                         <span className="text-white/80 font-poppins text-xs uppercase tracking-[0.3em]">
                             Let's Build Champions
                         </span>
 
                         <h2 className="font-oswald text-white text-4xl sm:text-5xl mt-4 mb-5">
-                            Book a Free Demo for Your School
+                            Bring FirstMove to Your School
                         </h2>
 
                         <p className="text-white/90 font-roboto leading-relaxed mb-9">
-                            Experience the FirstMove coaching model firsthand. Let us show
-                            you how we can elevate your school's sports program.
+                            Let's discuss how structured sports coaching can become part
+                            of your school's sporting journey.
                         </p>
 
-                        <div className="flex flex-wrap justify-center gap-4">
-                            <a
-                                href="mailto:hello@firstmove.in?subject=Free%20School%20Demo"
-                                className="bg-white text-navy px-7 py-3 rounded-md font-poppins font-bold text-xs uppercase tracking-wider hover:bg-navy hover:text-white transition-all"
-                            >
-                                Book a Free Demo
-                            </a>
-
-                            <a
-                                href="mailto:hello@firstmove.in"
-                                className="border border-white text-white px-7 py-3 rounded-md font-poppins font-bold text-xs uppercase tracking-wider hover:bg-white hover:text-navy transition-all"
-                            >
-                                Contact Us
-                            </a>
-                        </div>
+                        <a
+                            href={`${import.meta.env.BASE_URL}?page=contact`}
+                            className="inline-flex items-center justify-center bg-white text-navy px-8 py-4 rounded-md font-poppins font-bold text-xs uppercase tracking-wider hover:bg-navy hover:text-white transition-all"
+                        >
+                            Contact Us
+                        </a>
                     </div>
                 </section>
 
