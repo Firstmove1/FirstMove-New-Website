@@ -39,19 +39,19 @@ const WhyFirstMove: React.FC = () => {
     return (
         <section className="bg-[#F7F8FA] py-20 lg:py-24">
             <div className="max-w-7xl mx-auto px-6">
-
                 <div className="text-center max-w-3xl mx-auto mb-14">
-                    <p className="font-poppins font-semibold text-brand-orange uppercase tracking-[0.25em] text-sm mb-5">
-                        THE FIRSTMOVE ADVANTAGE
+                    <p className="font-poppins font-medium text-brand-orange text-sm mb-4">
+                        The FirstMove Advantage
                     </p>
 
-                    <h2 className="font-oswald font-bold text-navy text-4xl md:text-5xl mb-5">
+                    <h2 className="font-poppins font-semibold text-navy text-3xl md:text-4xl mb-5">
                         Why FirstMove?
                     </h2>
 
-                    <p className="font-roboto text-gray-600 text-base md:text-lg leading-relaxed">
-                        From expert guidance to flexible training, we make getting started
-                        in sports easier, more accessible and more rewarding.
+                    <p className="font-poppins text-gray-600 text-sm md:text-base leading-relaxed max-w-2xl mx-auto">
+                        We bring together experienced coaches, personalised programmes
+                        and structured training to make sports accessible, enjoyable
+                        and rewarding for everyone.
                     </p>
                 </div>
 
@@ -63,17 +63,17 @@ const WhyFirstMove: React.FC = () => {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ duration: 0.5, delay: index * 0.1 }}
-                            className="bg-white rounded-2xl p-8 lg:p-9 border border-gray-100 hover:shadow-lg transition-shadow duration-300"
+                            className="h-full bg-white rounded-2xl p-8 lg:p-9 border border-gray-100 hover:shadow-lg transition-shadow duration-300"
                         >
                             <div className="w-14 h-14 rounded-xl bg-[#FFF1E3] text-brand-orange flex items-center justify-center mb-6">
                                 {reason.icon}
                             </div>
 
-                            <h3 className="font-oswald font-semibold text-navy text-2xl mb-4">
+                            <h3 className="font-poppins font-semibold text-navy text-xl md:text-2xl mb-4">
                                 {reason.title}
                             </h3>
 
-                            <p className="font-roboto text-gray-600 text-base leading-[1.8]">
+                            <p className="font-poppins text-gray-600 text-sm md:text-base leading-[1.8]">
                                 {reason.description}
                             </p>
                         </motion.div>

@@ -128,7 +128,7 @@ const SchoolSectionHeading = ({
     <div className="text-center mb-12">
         <span className="section-label">{label}</span>
         <h2
-            className={`font-oswald ${light ? 'text-white' : 'text-navy'
+            className={`font-poppins ${light ? 'text-white' : 'text-navy'
                 } text-3xl sm:text-4xl md:text-5xl`}
         >
             {title}
@@ -146,8 +146,8 @@ const Schools: React.FC = () => {
                 {/* HERO */}
                 <section className="relative min-h-[580px] md:min-h-[620px] flex items-center overflow-hidden bg-navy">
                     <img
-                        src="https://images.unsplash.com/photo-1529390079861-591de354faf5?auto=format&fit=crop&w=2000&q=85"
-                        alt="Students participating in school sports"
+                        src={`${import.meta.env.BASE_URL}images/schools/school-sports.jpg`}
+                        alt="Students playing football on a school sports ground"
                         className="absolute inset-0 w-full h-full object-cover object-center"
                     />
 
@@ -164,7 +164,7 @@ const Schools: React.FC = () => {
                                 For Schools
                             </span>
 
-                            <h1 className="font-oswald text-white text-5xl sm:text-6xl md:text-7xl leading-[1.12] mt-5 mb-6">
+                            <h1 className="font-poppins text-white text-5xl sm:text-6xl md:text-7xl leading-[1.12] mt-5 mb-6">
                                 Make The Next
                                 <br />
                                 Sports Star
@@ -174,17 +174,17 @@ const Schools: React.FC = () => {
                                 </span>
                             </h1>
 
-                            <p className="text-white/85 font-roboto text-base md:text-lg leading-relaxed max-w-xl mb-9">
+                            <p className="text-white/85 font-poppins text-base md:text-lg leading-relaxed max-w-xl mb-9">
                                 Partner with FirstMove to provide professional sports coaching,
                                 structured curriculums, and a clear development pathway for
                                 your students.
                             </p>
 
                             <a
-                                href="mailto:info@firstmove.co.in?subject=School%20Sports%20Enquiry"
-                                className="btn-orange inline-flex items-center"
+                                href={`${import.meta.env.BASE_URL}?page=contact`}
+                                className="inline-flex items-center justify-center bg-brand-orange hover:bg-brand-orange-dark text-white font-poppins font-semibold text-sm px-8 py-4 rounded-md transition-all duration-300"
                             >
-                                Contact Us
+                                Book an Appointment
                             </a>
                         </motion.div>
                     </div>
@@ -215,11 +215,11 @@ const Schools: React.FC = () => {
                                             <Icon size={24} />
                                         </div>
 
-                                        <h3 className="font-oswald text-xl text-navy mb-3">
+                                        <h3 className="font-poppins text-xl text-navy mb-3">
                                             {item.title}
                                         </h3>
 
-                                        <p className="font-roboto text-gray-500 text-sm leading-relaxed">
+                                        <p className="font-poppins text-gray-500 text-sm leading-relaxed">
                                             {item.description}
                                         </p>
                                     </motion.div>
@@ -272,11 +272,11 @@ const Schools: React.FC = () => {
                         <div>
                             <span className="section-label">Our Approach</span>
 
-                            <h2 className="font-oswald text-navy text-4xl md:text-5xl mb-5">
+                            <h2 className="font-poppins text-navy text-4xl md:text-5xl mb-5">
                                 Building a Stronger Sporting Foundation
                             </h2>
 
-                            <p className="font-roboto text-gray-600 leading-relaxed mb-9">
+                            <p className="font-poppins text-gray-600 leading-relaxed mb-9">
                                 Every school has different needs, students and sporting
                                 aspirations. Our approach focuses on understanding those needs
                                 and delivering structured sports programmes that encourage
@@ -316,14 +316,14 @@ const Schools: React.FC = () => {
                             className="relative"
                         >
                             <img
-                                src="https://images.unsplash.com/photo-1574629810360-7efbbe195018?auto=format&fit=crop&w=1000&q=85"
-                                alt="Sports training and coaching"
-                                className="w-full h-[380px] md:h-[540px] object-cover rounded-2xl shadow-xl"
+                                src={`${import.meta.env.BASE_URL}images/schools/approach-sports.jpeg`}
+                                alt="Outdoor football ground"
+                                className="w-full h-[380px] md:h-[540px] object-cover object-center rounded-2xl shadow-xl"
                             />
 
                             <div className="absolute -bottom-5 -left-5 bg-brand-orange text-white p-5 rounded-xl hidden md:block">
                                 <GraduationCap size={30} />
-                                <p className="font-oswald text-xl mt-2">
+                                <p className="font-poppins text-xl mt-2">
                                     Growing Through Sport
                                 </p>
                             </div>
@@ -339,7 +339,7 @@ const Schools: React.FC = () => {
                             title="Growing Together"
                         />
 
-                        <p className="font-roboto text-gray-600 text-center max-w-3xl mx-auto leading-relaxed mb-12">
+                        <p className="font-poppins text-gray-600 text-center max-w-3xl mx-auto leading-relaxed mb-12">
                             Strong partnerships make meaningful sporting experiences
                             possible. We work together with schools, coaches and communities
                             to bring structured sports programmes closer to students and
@@ -363,11 +363,11 @@ const Schools: React.FC = () => {
                                             <Icon size={27} />
                                         </div>
 
-                                        <h3 className="font-oswald text-navy text-2xl mb-3">
+                                        <h3 className="font-poppins text-navy text-2xl mb-3">
                                             {item.title}
                                         </h3>
 
-                                        <p className="font-roboto text-gray-500 text-sm leading-relaxed">
+                                        <p className="font-poppins text-gray-500 text-sm leading-relaxed">
                                             {item.description}
                                         </p>
                                     </motion.div>
@@ -384,11 +384,11 @@ const Schools: React.FC = () => {
                             Let's Build Champions
                         </span>
 
-                        <h2 className="font-oswald text-white text-4xl sm:text-5xl mt-4 mb-5">
+                        <h2 className="font-poppins text-white text-4xl sm:text-5xl mt-4 mb-5">
                             Bring FirstMove to Your School
                         </h2>
 
-                        <p className="text-white/90 font-roboto leading-relaxed mb-9">
+                        <p className="text-white/90 font-poppins leading-relaxed mb-9">
                             Let's discuss how structured sports coaching can become part
                             of your school's sporting journey.
                         </p>
@@ -397,7 +397,7 @@ const Schools: React.FC = () => {
                             href={`${import.meta.env.BASE_URL}?page=contact`}
                             className="inline-flex items-center justify-center bg-white text-navy px-8 py-4 rounded-md font-poppins font-bold text-xs uppercase tracking-wider hover:bg-navy hover:text-white transition-all"
                         >
-                            Contact Us
+                            Book an Appointment
                         </a>
                     </div>
                 </section>

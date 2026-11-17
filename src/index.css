@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Roboto:wght@300;400;500;700&family=Poppins:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -10,7 +10,7 @@
   }
 
   body {
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Poppins', sans-serif;
     color: #111827;
     overflow-x: hidden;
     margin: 0;
@@ -30,22 +30,30 @@
     min-height: 100svh;
     display: block;
   }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: 'Poppins', sans-serif;
+  }
 }
 
 @layer components {
   .btn-orange {
-    @apply bg-brand-orange text-white font-poppins font-semibold uppercase tracking-wider px-6 py-3 text-sm hover:bg-brand-orange-dark transition-colors duration-200 cursor-pointer inline-block;
+    @apply bg-brand-orange text-white font-poppins font-semibold px-6 py-3 text-sm hover:bg-brand-orange-dark transition-colors duration-200 cursor-pointer inline-block;
   }
 
   .btn-ghost {
-    @apply bg-white/10 text-white font-poppins font-semibold uppercase tracking-wider px-6 py-3 text-sm border border-white/30 hover:bg-white/20 transition-colors duration-200 cursor-pointer inline-block;
+    @apply bg-white/10 text-white font-poppins font-semibold px-6 py-3 text-sm border border-white/30 hover:bg-white/20 transition-colors duration-200 cursor-pointer inline-block;
   }
 
   .section-label {
-    @apply font-poppins font-semibold text-brand-orange uppercase tracking-widest text-xs mb-2 block;
+    @apply font-poppins font-semibold text-brand-orange text-xs mb-2 block;
   }
 }
-
 
 @keyframes sports-slide {
   0% {

@@ -12,58 +12,79 @@ const quickLinks = [
   { label: 'Schools', href: `${import.meta.env.BASE_URL}?page=schools` },
   { label: 'Private Coaching', href: `${import.meta.env.BASE_URL}?page=coaching` },
   { label: 'Contact Us', href: `${import.meta.env.BASE_URL}?page=contact` },
+  { label: 'Privacy Policy', href: `${import.meta.env.BASE_URL}?page=privacy` },
 ];
-
-
 
 const Footer: React.FC = () => {
   return (
-    <footer className="bg-navy text-white py-10">
-      <div className="max-w-7xl mx-auto px-4">
+    <footer className="bg-navy text-white pt-14 pb-8">
+      <div className="max-w-7xl mx-auto px-6">
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 pb-8 border-b border-white/10">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 lg:gap-16 pb-10 border-b border-white/10">
 
           {/* Brand */}
           <div>
-            <h3 className="font-poppins font-bold text-2xl mb-3">
+            <a
+              href={`${import.meta.env.BASE_URL}#home`}
+              className="inline-block font-poppins font-extrabold text-2xl md:text-3xl tracking-tight mb-4"
+              aria-label="FirstMove Home"
+            >
               First<span className="text-brand-orange italic">Move</span>
-            </h3>
+            </a>
 
-            <p className="font-roboto text-white/50 text-sm leading-relaxed">
-              Expert-led sports coaching, venue management and community experiences.
+            <p className="font-poppins text-white/60 text-sm leading-[1.9] max-w-sm">
+              Creating opportunities through sport with expert coaching,
+              structured programmes and experiences that inspire confidence,
+              teamwork and lifelong participation.
             </p>
 
-            <div className="flex items-center gap-4 mt-4">
-              <a href="#" aria-label="LinkedIn" className="text-white/50 hover:text-brand-orange transition-colors">
-                <LinkedInIcon size={16} />
+            <div className="flex items-center gap-5 mt-6">
+              <a
+                href="#"
+                aria-label="LinkedIn"
+                className="text-white/60 hover:text-brand-orange transition-colors"
+              >
+                <LinkedInIcon size={19} />
               </a>
 
-              <a href="#" aria-label="Instagram" className="text-white/50 hover:text-brand-orange transition-colors">
-                <InstagramIcon size={16} />
+              <a
+                href="#"
+                aria-label="Instagram"
+                className="text-white/60 hover:text-brand-orange transition-colors"
+              >
+                <InstagramIcon size={19} />
               </a>
 
-              <a href="#" aria-label="Facebook" className="text-white/50 hover:text-brand-orange transition-colors">
-                <FacebookIcon size={16} />
+              <a
+                href="#"
+                aria-label="Facebook"
+                className="text-white/60 hover:text-brand-orange transition-colors"
+              >
+                <FacebookIcon size={19} />
               </a>
 
-              <a href="#" aria-label="Twitter / X" className="text-white/50 hover:text-brand-orange transition-colors">
-                <TwitterXIcon size={15} />
+              <a
+                href="#"
+                aria-label="Twitter / X"
+                className="text-white/60 hover:text-brand-orange transition-colors"
+              >
+                <TwitterXIcon size={18} />
               </a>
             </div>
           </div>
 
           {/* Quick Links */}
           <div>
-            <h4 className="font-poppins font-semibold text-sm uppercase tracking-wider mb-3 text-brand-orange">
-              Quick Links
+            <h4 className="font-poppins font-semibold text-sm uppercase tracking-wider mb-5 text-brand-orange">
+              Explore
             </h4>
 
-            <ul className="space-y-2">
+            <ul className="space-y-3">
               {quickLinks.map((link) => (
                 <li key={link.label}>
                   <a
                     href={link.href}
-                    className="font-roboto text-white/50 text-sm hover:text-white transition-colors"
+                    className="font-poppins text-white/60 text-sm hover:text-white transition-colors"
                   >
                     {link.label}
                   </a>
@@ -72,17 +93,22 @@ const Footer: React.FC = () => {
             </ul>
           </div>
 
-
-
-
           {/* Contact */}
           <div>
-            <h4 className="font-poppins font-semibold text-sm uppercase tracking-wider mb-3 text-brand-orange">
-              Contact
+            <h4 className="font-poppins font-semibold text-sm uppercase tracking-wider mb-5 text-brand-orange">
+              Get in Touch
             </h4>
 
-            <ul className="space-y-2 font-roboto text-white/50 text-sm">
-              <li>+91 91362 44036</li>
+            <ul className="space-y-4 font-poppins text-white/60 text-sm">
+              <li>
+                <a
+                  href="tel:+919136244036"
+                  className="hover:text-white transition-colors"
+                >
+                  +91 91362 44036
+                </a>
+              </li>
+
               <li>
                 <a
                   href="mailto:info@firstmove.co.in"
@@ -91,6 +117,7 @@ const Footer: React.FC = () => {
                   info@firstmove.co.in
                 </a>
               </li>
+
               <li>Mumbai, India</li>
             </ul>
           </div>
@@ -98,9 +125,13 @@ const Footer: React.FC = () => {
         </div>
 
         {/* Copyright */}
-        <div className="pt-6 text-center">
-          <p className="font-roboto text-white/40 text-xs">
-            © All Rights Reserved 2026. Made for the ❤️ of Sports
+        <div className="pt-7 flex flex-col sm:flex-row items-center justify-between gap-3">
+          <p className="font-poppins text-white/40 text-xs text-center">
+            © {new Date().getFullYear()} FirstMove. All Rights Reserved.
+          </p>
+
+          <p className="font-poppins text-white/40 text-xs">
+            Made for the ❤️ of Sports
           </p>
         </div>
 

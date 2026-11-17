@@ -101,21 +101,27 @@ function PrivateCoaching() {
                 <div className="mx-auto grid w-full max-w-[1440px] grid-cols-1 items-center gap-10 px-6 pt-36 pb-14 md:grid-cols-[minmax(0,1.1fr)_minmax(0,0.9fr)] md:px-10 lg:gap-14 lg:pt-36 lg:pb-16">
 
                     {/* LEFT SIDE CONTENT */}
-                    <div className="flex min-w-0 flex-col justify-center">
-                        <p className="mb-8 text-sm font-bold tracking-[0.28em] text-orange-500">
+                    <div className="flex min-w-0 flex-col items-start justify-center text-left">
+
+                        <p className="mb-5 text-sm font-bold tracking-[0.25em] text-orange-500">
                             PRIVATE COACHING
                         </p>
 
-                        <h1 className="max-w-3xl text-3xl font-bold leading-[1.2] text-white sm:text-4xl lg:text-[42px]">
-                            Expert Sports Coaching, Right at Your Doorstep
+                        <h1 className="mb-6 max-w-[850px] text-3xl font-bold leading-[1.3] text-white sm:text-4xl lg:text-[52px]">
+                            Expert Sports Coaching,
+                            <br /> <br />
+                            Right at Your Doorstep
                         </h1>
 
-                        <p className="mt-6 max-w-3xl text-base font-normal leading-[1.7] text-gray-200 sm:text-lg lg:text-[21px]">
-                            Experience the joy of learning and playing sports within
-                            your community, with expert coaches, structured programmes,
-                            and personalised training for kids and adults of all skill
-                            levels—all while skipping the hassle of travelling.
+                        <h2 className="mb-6 max-w-[850px] text-lg font-semibold leading-[1.5] text-orange-400 sm:text-xl lg:text-[25px]">
+                            Personalised training for kids and adults, at your preferred location.
+                        </h2>
+
+                        <p className="max-w-[750px] text-base leading-[1.7] text-gray-200 sm:text-lg">
+                            Train with experienced coaches through structured programmes
+                            designed around your goals, skill level and schedule.
                         </p>
+
                     </div>
 
                     {/* FREE TRIAL FORM */}
@@ -295,9 +301,9 @@ function PrivateCoaching() {
                                 {/* SUBMIT BUTTON */}
                                 <button
                                     type="submit"
-                                    className="w-full rounded-md bg-[#06234b] py-3.5 font-semibold text-white transition hover:bg-orange-500 sm:col-span-2"
+                                    className="w-full rounded-md bg-[#06234b] py-3.5 font-semibold tracking-wide text-white transition-all duration-300 hover:bg-orange-500 sm:col-span-2"
                                 >
-                                    Send
+                                    BOOK MY FREE TRIAL
                                 </button>
                             </form>
                         )}

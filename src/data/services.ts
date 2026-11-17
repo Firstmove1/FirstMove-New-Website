@@ -2,23 +2,23 @@
 export const services = [
   {
     id: '01',
-    title: 'School Program',
+    title: 'School Sports Program',
     description:
-      'Structured after-school and on-campus sports curriculums for educational institutions, fostering physical activity, teamwork, and competitive spirit.',
+      'Engaging, structured sports programmes designed for schools. We bring qualified coaches, planned training sessions and age-appropriate activities to help students develop skills, teamwork and confidence.',
     icon: 'School',
   },
   {
     id: '02',
     title: 'Private Coaching',
     description:
-      'Personalized 1-on-1 and society-based sessions at your preferred location and schedule. Dedicated coaches, zero distractions.',
+      'Personalised sports coaching for children and adults at your preferred location. Learn at your own pace with expert coaches, structured programmes and individual attention.',
     icon: 'User',
   },
   {
     id: '03',
-    title: 'Sports Venue Management',
+    title: 'Community Sports Events',
     description:
-      'Conceptualise, Build, Operate and Market sports venues.',
-    icon: 'Building2',
+      'Bringing communities together through sporting events, tournaments and recreational activities that encourage participation, connection and an active lifestyle.',
+    icon: 'Calendar',
   },
 ];
