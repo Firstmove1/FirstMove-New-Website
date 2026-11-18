@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import { Phone } from 'lucide-react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
+import contactBg from '../assets/contact-bg.jpg';
 
 const Contact: React.FC = () => {
     const [formData, setFormData] = useState({
@@ -36,12 +37,22 @@ const Contact: React.FC = () => {
 
             <main>
                 {/* Hero */}
-                <section className="bg-[#F2F2F2] px-6 pt-28 pb-10 md:pt-32 md:pb-12 text-center">
+                <section
+                    className="relative px-6 pt-28 pb-10 md:pt-32 md:pb-12 text-center overflow-hidden"
+                    style={{
+                        backgroundImage: `url(${contactBg})`,
+                        backgroundSize: 'cover',
+                        backgroundPosition: 'center',
+                    }}
+                >
+                    {/* Light overlay so text remains readable over the white image */}
+                    <div className="absolute inset-0 bg-white/70" />
+
                     <motion.div
                         initial={{ opacity: 0, y: 25 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.6 }}
-                        className="max-w-4xl mx-auto"
+                        className="relative z-10 max-w-4xl mx-auto"
                     >
                         <p className="text-[#F47B20] font-semibold tracking-[0.2em] text-sm mb-5">
                             We'd Love to Hear From You
