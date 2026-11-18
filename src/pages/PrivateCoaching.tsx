@@ -1,5 +1,5 @@
 
-import React, { useState, type ChangeEvent, type FormEvent } from 'react';
+import { useState, type ChangeEvent, type FormEvent } from 'react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import WhyFirstMove from '../components/WhyFirstMove';
