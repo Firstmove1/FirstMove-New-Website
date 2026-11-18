@@ -44,7 +44,7 @@ const FinalCTA: React.FC = () => {
             whileTap={{ scale: 0.97 }}
             className="inline-flex items-center gap-3 bg-white text-brand-orange font-poppins font-semibold text-sm px-9 py-4 rounded-md hover:bg-slate-100 transition-colors duration-300"
           >
-            Book an Appointment
+            Contact Us
             <ArrowRight size={20} />
           </motion.a>
         </motion.div>

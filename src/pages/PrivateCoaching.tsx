@@ -2,6 +2,7 @@
 import { useState, type ChangeEvent, type FormEvent } from 'react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
+import WhyFirstMove from '../components/WhyFirstMove';
 
 const imageBase = `${import.meta.env.BASE_URL}images/private-coaching/`;
 
@@ -92,7 +93,7 @@ function PrivateCoaching() {
                 <div
                     className="absolute inset-0 -z-20 bg-cover bg-center"
                     style={{
-                        backgroundImage: `url(${imageBase}hero-coaching.jpg)`,
+                        backgroundImage: `url(${imageBase}priv-bgrnd.jpeg)`,
                     }}
                 />
 
@@ -311,6 +312,7 @@ function PrivateCoaching() {
                 </div>
             </section>
 
+
             {/* EXPLORE OUR SPORTS */}
             <section className="bg-[#ff8900] px-5 py-12 text-white">
                 <div className="mx-auto max-w-[1320px]">
@@ -413,6 +415,8 @@ function PrivateCoaching() {
                     ))}
                 </div>
             </section>
+            {/* WHY FIRSTMOVE */}
+            <WhyFirstMove />
 
             {/* BOOKING PROCESS */}
             <section className="bg-white px-6 py-16">
@@ -464,40 +468,6 @@ function PrivateCoaching() {
                 </div>
             </section>
 
-            {/* WHY CHOOSE FIRSTMOVE */}
-            <section className="bg-[#09264d] px-6 py-16 text-white">
-                <div className="mx-auto max-w-[1320px]">
-                    <p className="text-center text-xs font-extrabold tracking-[0.35em] text-orange-400">
-                        WHY CHOOSE FIRSTMOVE
-                    </p>
-
-                    <h2 className="mt-4 text-center font-oswald text-4xl font-bold uppercase">
-                        The FirstMove Difference
-                    </h2>
-
-                    <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-                        {[
-                            'Expert and verified coaches',
-                            'Personalised coaching programmes',
-                            'Flexible timings and locations',
-                            'Structured training and progress tracking',
-                        ].map((item, index) => (
-                            <div
-                                key={item}
-                                className="border border-white/20 bg-white/5 p-7"
-                            >
-                                <span className="font-oswald text-4xl font-bold text-orange-400">
-                                    0{index + 1}
-                                </span>
-
-                                <h3 className="mt-5 text-lg font-bold leading-7">
-                                    {item}
-                                </h3>
-                            </div>
-                        ))}
-                    </div>
-                </div>
-            </section>
 
             {/* FINAL CTA */}
             <section className="bg-orange-500 px-6 py-16 text-center text-white">

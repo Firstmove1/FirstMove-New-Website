@@ -79,3 +79,10 @@
     transform: none;
   }
 }
+
+/* Hero background — shift focal point on mobile to centre the athlete */
+@media (max-width: 767px) {
+  #hero-bg {
+    background-position: 65% center;
+  }
+}

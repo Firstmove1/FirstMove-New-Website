@@ -7,6 +7,7 @@ import {
     Settings,
     Megaphone,
 } from 'lucide-react';
+import sportMngtImage from '../assets/sport-mngt.jpeg';
 
 const pillars = [
     {
@@ -57,7 +58,7 @@ const SportsVenueManagement: React.FC = () => {
                     </p>
 
                     <h2 className="font-poppins font-semibold text-white text-3xl md:text-4xl mb-5">
-                        Sports Venue Management
+                        Sports Facility Management
                     </h2>
 
                     <p className="font-poppins text-white/75 text-sm md:text-base max-w-3xl mx-auto leading-relaxed">
@@ -82,8 +83,8 @@ const SportsVenueManagement: React.FC = () => {
                     >
                         <div className="rounded-2xl overflow-hidden h-[280px] sm:h-[350px] md:h-[430px] shadow-xl">
                             <img
-                                src="https://images.unsplash.com/photo-1574629810360-7efbbe195018?w=1200&q=85"
-                                alt="Modern sports stadium and playing field"
+                                src={sportMngtImage}
+                                alt="Sports venue management facility"
                                 className="w-full h-full object-cover object-center"
                                 loading="lazy"
                             />

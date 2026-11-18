@@ -27,7 +27,7 @@ const OurClients: React.FC = () => {
 
                 {/* Section Heading */}
                 <div className="text-center mb-14">
-                    <p className="font-poppins font-medium text-brand-orange text-sm mb-5">
+                    <p className="font-poppins font-semibold text-brand-orange text-base md:text-lg mb-5">
                         Our associations
                     </p>
 

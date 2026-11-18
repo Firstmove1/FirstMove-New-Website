@@ -10,49 +10,50 @@ const Hero: React.FC = () => {
       id="home"
       className="relative flex items-center overflow-hidden"
       style={{
-        minHeight: '560px',
-        height: '78vh',
-        maxHeight: '760px',
+        minHeight: '600px',
+        height: '100svh',
+        maxHeight: '860px',
       }}
     >
-      {/* Background image */}
+      {/* Background image — position shifts on mobile to frame the athlete */}
       <div
+        id="hero-bg"
         className="absolute inset-0"
         style={{
           backgroundImage: `url(${heroImage})`,
           backgroundSize: 'cover',
-          backgroundPosition: 'right center',
           backgroundRepeat: 'no-repeat',
+          backgroundPosition: 'center center',
         }}
       />
 
-      {/* Gradient overlay */}
-      {/* On mobile: dark overlay from bottom-left so text is always readable */}
+      {/* Desktop gradient — fades left side dark, right side clear */}
       <div
         className="absolute inset-0 hidden md:block"
         style={{
           background:
-            'linear-gradient(to right, rgba(9,26,51,0.90) 0%, rgba(9,26,51,0.76) 45%, rgba(9,26,51,0.38) 75%, rgba(9,26,51,0.16) 100%)',
+            'linear-gradient(to right, rgba(9,26,51,0.92) 0%, rgba(9,26,51,0.78) 45%, rgba(9,26,51,0.40) 75%, rgba(9,26,51,0.18) 100%)',
         }}
       />
-      {/* Mobile-only gradient: strong left-side + bottom fade so text pops */}
+
+      {/* Mobile gradient — moderate darkness so the image shows through clearly */}
       <div
         className="absolute inset-0 md:hidden"
         style={{
           background:
-            'linear-gradient(to right, rgba(9,26,51,0.95) 0%, rgba(9,26,51,0.88) 55%, rgba(9,26,51,0.60) 100%)',
+            'linear-gradient(135deg, rgba(9,26,51,0.82) 0%, rgba(9,26,51,0.68) 50%, rgba(9,26,51,0.45) 100%)',
         }}
       />
 
-      {/* Content */}
-      <div className="relative z-10 w-full max-w-7xl mx-auto px-6 md:px-10 lg:px-6 pt-24 pb-10">
+      {/* Content — top padding accounts for fixed 72px navbar + comfortable gap */}
+      <div className="relative z-10 w-full max-w-7xl mx-auto px-6 md:px-10 lg:px-6 pt-[96px] md:pt-28 pb-10">
 
         {/* Intro label */}
         <motion.p
           initial={{ opacity: 0, y: 15 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
-          className="font-poppins font-medium text-brand-orange text-sm md:text-base tracking-wide mb-5"
+          className="font-poppins font-semibold text-brand-orange text-sm md:text-base tracking-widest uppercase mb-5"
         >
           Inspiring movement. Building confidence.
         </motion.p>
@@ -62,7 +63,7 @@ const Hero: React.FC = () => {
           initial={{ opacity: 0, y: 25 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="font-oswald font-normal text-white leading-[0.95] mb-5"
+          className="font-oswald font-semibold text-white leading-[0.95] mb-5"
           style={{ fontSize: 'clamp(2.8rem, 6vw, 5.5rem)' }}
         >
           Don't Just Watch<br />

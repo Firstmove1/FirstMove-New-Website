@@ -13,9 +13,63 @@ import {
     GraduationCap,
     BookOpen,
     HeartHandshake,
+    ShieldCheck,
+    ClipboardList,
+    Flag,
 } from 'lucide-react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
+
+const schoolServices = [
+    {
+        number: '01',
+        category: 'PEOPLE',
+        icon: Users,
+        title: 'Expert Sports Coaching',
+        description:
+            'Qualified, sport-specific coaches with background verification, planned session delivery and a student-first approach to safety and learning.',
+    },
+    {
+        number: '02',
+        category: 'LEARNING',
+        icon: BookOpen,
+        title: 'Age-wise, Curriculum-led Training',
+        description:
+            'Progressive, age-appropriate lesson plans with clear skills, learning objectives and milestones—designed for every stage of development.',
+    },
+    {
+        number: '03',
+        category: 'ACCOUNTABILITY',
+        icon: ClipboardList,
+        title: 'Quarterly Assessments & Report Cards',
+        description:
+            'Structured evaluations that document skill development, participation, strengths and focus areas—giving schools and parents meaningful visibility.',
+    },
+    {
+        number: '04',
+        category: 'QUALITY',
+        icon: ShieldCheck,
+        title: 'Quality Session Checks',
+        description:
+            'Periodic on-ground observations of coaching quality, student engagement and curriculum delivery, followed by actionable feedback and improvement.',
+    },
+    {
+        number: '05',
+        category: 'PERFORMANCE',
+        icon: Trophy,
+        title: 'School Team Training',
+        description:
+            'Trials, team selection, advanced coaching and competition preparation for inter-school, district, state and national-level opportunities.',
+    },
+    {
+        number: '06',
+        category: 'EXPERIENCES',
+        icon: Flag,
+        title: 'Sports Days & School Events',
+        description:
+            'Creative concepts, age-wise games, competition formats, officials, operations and on-ground execution—managed from the first brief to the final medal.',
+    },
+];
 
 const benefits = [
     {
@@ -190,6 +244,52 @@ const Schools: React.FC = () => {
                     </div>
                 </section>
 
+                {/* OUR SERVICES */}
+                <section className="bg-[#F8F8F9] py-20 md:py-24">
+                    <div className="max-w-7xl mx-auto px-6">
+                        <SchoolSectionHeading
+                            label="Our Services"
+                            title="What We Bring to Your School"
+                        />
+
+                        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+                            {schoolServices.map((service, index) => {
+                                const Icon = service.icon;
+                                return (
+                                    <motion.div
+                                        key={service.number}
+                                        initial={{ opacity: 0, y: 25 }}
+                                        whileInView={{ opacity: 1, y: 0 }}
+                                        viewport={{ once: true }}
+                                        transition={{ delay: index * 0.1 }}
+                                        className="bg-white border border-gray-100 rounded-xl p-7 flex flex-col hover:-translate-y-1.5 hover:shadow-xl transition-all duration-300"
+                                    >
+                                        {/* Number + category */}
+                                        <p className="font-poppins text-[11px] font-semibold text-gray-400 tracking-widest uppercase mb-5">
+                                            {service.number} / {service.category}
+                                        </p>
+
+                                        {/* Icon */}
+                                        <div className="w-11 h-11 rounded-lg bg-orange-50 text-brand-orange flex items-center justify-center mb-5">
+                                            <Icon size={22} strokeWidth={1.7} />
+                                        </div>
+
+                                        {/* Title */}
+                                        <h3 className="font-poppins font-bold text-navy text-lg mb-3">
+                                            {service.title}
+                                        </h3>
+
+                                        {/* Description */}
+                                        <p className="font-poppins text-gray-500 text-sm leading-relaxed">
+                                            {service.description}
+                                        </p>
+                                    </motion.div>
+                                );
+                            })}
+                        </div>
+                    </div>
+                </section>
+
                 {/* WHY FIRSTMOVE */}
                 <section className="bg-[#F8F8F9] py-20">
                     <div className="max-w-7xl mx-auto px-6">
@@ -266,68 +366,105 @@ const Schools: React.FC = () => {
                 </section>
 
                 {/* OUR APPROACH */}
-                <section className="bg-white py-20">
-                    <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+                <section className="bg-white py-20 md:py-24">
+                    <div className="max-w-7xl mx-auto px-6">
+                        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
 
-                        <div>
-                            <span className="section-label">Our Approach</span>
+                            {/* Left — image + orange callout card */}
+                            <motion.div
+                                initial={{ opacity: 0, x: -30 }}
+                                whileInView={{ opacity: 1, x: 0 }}
+                                viewport={{ once: true }}
+                                transition={{ duration: 0.6 }}
+                                className="relative"
+                            >
+                                <img
+                                    src={`${import.meta.env.BASE_URL}images/schools/approach.jpg`}
+                                    alt="Students cycling in a school sports event"
+                                    className="w-full h-[380px] md:h-[500px] object-cover object-center rounded-2xl shadow-xl"
+                                />
 
-                            <h2 className="font-poppins text-navy text-4xl md:text-5xl mb-5">
-                                Building a Stronger Sporting Foundation
-                            </h2>
+                                {/* Orange callout card */}
+                                <div className="absolute bottom-6 left-6 bg-brand-orange text-white rounded-xl px-6 py-5 max-w-[220px] shadow-xl">
+                                    <p className="font-poppins font-bold text-xl leading-snug mb-1">
+                                        Every child.
+                                    </p>
+                                    <p className="font-poppins text-white/90 text-sm leading-relaxed">
+                                        A starting point, a pathway and a chance to progress.
+                                    </p>
+                                </div>
+                            </motion.div>
 
-                            <p className="font-poppins text-gray-600 leading-relaxed mb-9">
-                                Every school has different needs, students and sporting
-                                aspirations. Our approach focuses on understanding those needs
-                                and delivering structured sports programmes that encourage
-                                participation, skill development and long-term growth.
-                            </p>
+                            {/* Right — heading + numbered steps */}
+                            <motion.div
+                                initial={{ opacity: 0, x: 30 }}
+                                whileInView={{ opacity: 1, x: 0 }}
+                                viewport={{ once: true }}
+                                transition={{ duration: 0.6 }}
+                            >
+                                <span className="section-label">Our Approach</span>
 
-                            <div className="space-y-7">
-                                {approach.map((item) => {
-                                    const Icon = item.icon;
+                                <h2 className="font-poppins font-bold text-navy text-3xl md:text-4xl lg:text-[2.6rem] leading-tight mb-5">
+                                    A thoughtful approach to every stage of learning.
+                                </h2>
 
-                                    return (
-                                        <div key={item.title} className="flex gap-4 items-start">
-                                            <div className="w-10 h-10 rounded-full bg-orange-50 text-brand-orange flex-shrink-0 flex items-center justify-center">
-                                                <Icon size={19} />
-                                            </div>
+                                <p className="font-poppins text-gray-500 text-sm md:text-base leading-relaxed mb-10">
+                                    Sports education works best when the right people, the right
+                                    plan and regular feedback come together. Our delivery model
+                                    is built around all three.
+                                </p>
+
+                                {/* Numbered steps */}
+                                <div className="space-y-6">
+                                    {[
+                                        {
+                                            num: '01',
+                                            title: 'Discover & plan',
+                                            desc: 'Understand school infrastructure, age groups, schedules and sporting objectives.',
+                                        },
+                                        {
+                                            num: '02',
+                                            title: 'Coach with purpose',
+                                            desc: 'Deploy suitable coaches and deliver planned sessions with progressive learning outcomes.',
+                                        },
+                                        {
+                                            num: '03',
+                                            title: 'Observe & assess',
+                                            desc: 'Conduct quality checks, maintain programme oversight and assess students quarterly.',
+                                        },
+                                        {
+                                            num: '04',
+                                            title: 'Celebrate & advance',
+                                            desc: 'Share report cards, recognise improvement and identify students ready for higher-level training.',
+                                        },
+                                    ].map((step, i) => (
+                                        <motion.div
+                                            key={step.num}
+                                            initial={{ opacity: 0, y: 15 }}
+                                            whileInView={{ opacity: 1, y: 0 }}
+                                            viewport={{ once: true }}
+                                            transition={{ delay: i * 0.1 }}
+                                            className="flex gap-5 items-start"
+                                        >
+                                            {/* Step number bubble */}
+                                            <span className="flex-shrink-0 w-9 h-9 rounded-full border-2 border-gray-200 flex items-center justify-center font-poppins font-semibold text-xs text-gray-400">
+                                                {step.num}
+                                            </span>
 
                                             <div>
-                                                <h3 className="font-poppins font-bold text-navy text-xs uppercase mb-2">
-                                                    {item.title}
+                                                <h3 className="font-poppins font-bold text-navy text-base mb-1">
+                                                    {step.title}
                                                 </h3>
-
-                                                <p className="text-gray-500 text-sm leading-relaxed">
-                                                    {item.description}
+                                                <p className="font-poppins text-gray-500 text-sm leading-relaxed">
+                                                    {step.desc}
                                                 </p>
                                             </div>
-                                        </div>
-                                    );
-                                })}
-                            </div>
+                                        </motion.div>
+                                    ))}
+                                </div>
+                            </motion.div>
+
                         </div>
-
-                        <motion.div
-                            initial={{ opacity: 0, x: 30 }}
-                            whileInView={{ opacity: 1, x: 0 }}
-                            viewport={{ once: true }}
-                            transition={{ duration: 0.6 }}
-                            className="relative"
-                        >
-                            <img
-                                src={`${import.meta.env.BASE_URL}images/schools/approach-sports.jpeg`}
-                                alt="Outdoor football ground"
-                                className="w-full h-[380px] md:h-[540px] object-cover object-center rounded-2xl shadow-xl"
-                            />
-
-                            <div className="absolute -bottom-5 -left-5 bg-brand-orange text-white p-5 rounded-xl hidden md:block">
-                                <GraduationCap size={30} />
-                                <p className="font-poppins text-xl mt-2">
-                                    Growing Through Sport
-                                </p>
-                            </div>
-                        </motion.div>
                     </div>
                 </section>
 
@@ -384,7 +521,7 @@ const Schools: React.FC = () => {
                             Let's Build Champions
                         </span>
 
-                        <h2 className="font-poppins text-white text-4xl sm:text-5xl mt-4 mb-5">
+                        <h2 className="font-poppins text-white font-bold text-4xl sm:text-5xl mt-4 mb-5">
                             Bring FirstMove to Your School
                         </h2>
 

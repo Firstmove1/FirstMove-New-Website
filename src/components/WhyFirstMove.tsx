@@ -40,7 +40,7 @@ const WhyFirstMove: React.FC = () => {
         <section className="bg-[#F7F8FA] py-20 lg:py-24">
             <div className="max-w-7xl mx-auto px-6">
                 <div className="text-center max-w-3xl mx-auto mb-14">
-                    <p className="font-poppins font-medium text-brand-orange text-sm mb-4">
+                    <p className="font-poppins font-medium text-brand-orange text-sm mb-6">
                         The FirstMove Advantage
                     </p>
 
