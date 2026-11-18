@@ -17,6 +17,7 @@ import {
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import pickelImg from '../assets/pickel.png';
+import padelImg from '../assets/padel.png';
 
 const schoolServices = [
     {
@@ -78,7 +79,7 @@ const sports = [
     { name: 'FOOTBALL', icon: '⚽' },
     { name: 'GYMNASTICS', icon: '🤸' },
     { name: 'JUDO', icon: '🥋' },
-    { name: 'PADEL', icon: '🎾' },
+    { name: 'PADEL', icon: <img src={padelImg} alt="Padel" className="w-8 h-8 object-contain" /> },
     { name: 'PICKLEBALL', icon: <img src={pickelImg} alt="Pickleball" className="w-8 h-8 object-contain" /> },
     { name: 'SKATING', icon: '🛼' },
     { name: 'SWIMMING', icon: '🏊' },

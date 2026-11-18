@@ -4,6 +4,7 @@ import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import WhyFirstMove from '../components/WhyFirstMove';
 import pickelImg from '../assets/pickel.png';
+import padelImg from '../assets/padel.png';
 
 const imageBase = `${import.meta.env.BASE_URL}images/private-coaching/`;
 
@@ -16,7 +17,7 @@ const sports = [
     { name: 'FOOTBALL', icon: '⚽' },
     { name: 'GYMNASTICS', icon: '🤸' },
     { name: 'JUDO', icon: '🥋' },
-    { name: 'PADEL', icon: '🎾' },
+    { name: 'PADEL', icon: <img src={padelImg} alt="Padel" className="w-11 h-11 object-contain transition-transform duration-300 group-hover:scale-110" /> },
     { name: 'PICKLEBALL', icon: <img src={pickelImg} alt="Pickleball" className="w-11 h-11 object-contain transition-transform duration-300 group-hover:scale-110" /> },
     { name: 'SKATING', icon: '🛼' },
     { name: 'SWIMMING', icon: '🏊' },
