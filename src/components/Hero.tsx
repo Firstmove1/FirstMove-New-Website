@@ -21,17 +21,26 @@ const Hero: React.FC = () => {
         style={{
           backgroundImage: `url(${heroImage})`,
           backgroundSize: 'cover',
-          backgroundPosition: 'center center',
+          backgroundPosition: 'right center',
           backgroundRepeat: 'no-repeat',
         }}
       />
 
       {/* Gradient overlay */}
+      {/* On mobile: dark overlay from bottom-left so text is always readable */}
       <div
-        className="absolute inset-0"
+        className="absolute inset-0 hidden md:block"
         style={{
           background:
             'linear-gradient(to right, rgba(9,26,51,0.90) 0%, rgba(9,26,51,0.76) 45%, rgba(9,26,51,0.38) 75%, rgba(9,26,51,0.16) 100%)',
+        }}
+      />
+      {/* Mobile-only gradient: strong left-side + bottom fade so text pops */}
+      <div
+        className="absolute inset-0 md:hidden"
+        style={{
+          background:
+            'linear-gradient(to right, rgba(9,26,51,0.95) 0%, rgba(9,26,51,0.88) 55%, rgba(9,26,51,0.60) 100%)',
         }}
       />
 
@@ -52,17 +61,13 @@ const Hero: React.FC = () => {
         <motion.h1
           initial={{ opacity: 0, y: 25 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.1 }}
-          className="font-poppins font-medium text-white leading-[1.25] tracking-[-0.02em] mb-6"
-          style={{ fontSize: 'clamp(1.9rem, 3.2vw, 3.1rem)' }}
+          transition={{ duration: 0.6 }}
+          className="font-oswald font-normal text-white leading-[0.95] mb-5"
+          style={{ fontSize: 'clamp(2.8rem, 6vw, 5.5rem)' }}
         >
-          Find Your Game.
-          <br />
-          Build Your Future.
-          <br />
-          <span className="text-brand-orange font-semibold">
-            Make Your First Move.
-          </span>
+          Don't Just Watch<br />
+          Champions.<br />
+          <span className="text-brand-orange">Become One.</span>
         </motion.h1>
 
         {/* Description */}
@@ -72,10 +77,11 @@ const Hero: React.FC = () => {
           transition={{ duration: 0.5, delay: 0.2 }}
           className="font-poppins font-normal text-white/90 text-sm md:text-base leading-[1.85] max-w-xl mb-9"
         >
-          Discover opportunities to learn, train and grow through sport.
-          From structured school programmes to personalised coaching,
-          FirstMove helps children and adults build skills, confidence
-          and a lifelong love for an active lifestyle.
+          From expert-led sports coaching and end-to-end venue management
+          to exciting sporting events, FirstMove brings the world of sports
+          together. We create opportunities for athletes and communities to
+          embrace sports, stay active,  and thrive both on and off the field.
+
         </motion.p>
 
         {/* CTA Buttons */}

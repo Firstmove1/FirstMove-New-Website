@@ -61,7 +61,7 @@ const sports = [
     { name: 'JUDO', icon: '🥋' },
     { name: 'PADEL', icon: '🎾' },
     { name: 'PICKLEBALL', icon: '🏓' },
-    { name: 'SKATING', icon: '⛸️' },
+    { name: 'SKATING', icon: '🛼' },
     { name: 'SWIMMING', icon: '🏊' },
     { name: 'TABLE TENNIS', icon: '🏓' },
     { name: 'TAEKWONDO', icon: '🥋' },
