@@ -3,6 +3,7 @@ import { useState, type ChangeEvent, type FormEvent } from 'react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import WhyFirstMove from '../components/WhyFirstMove';
+import pickelImg from '../assets/pickel.png';
 
 const imageBase = `${import.meta.env.BASE_URL}images/private-coaching/`;
 
@@ -16,8 +17,8 @@ const sports = [
     { name: 'GYMNASTICS', icon: '🤸' },
     { name: 'JUDO', icon: '🥋' },
     { name: 'PADEL', icon: '🎾' },
-    { name: 'PICKLEBALL', icon: '🏓' },
-    { name: 'SKATING', icon: '⛸️' },
+    { name: 'PICKLEBALL', icon: <img src={pickelImg} alt="Pickleball" className="w-11 h-11 object-contain transition-transform duration-300 group-hover:scale-110" /> },
+    { name: 'SKATING', icon: '🛼' },
     { name: 'SWIMMING', icon: '🏊' },
     { name: 'TABLE TENNIS', icon: '🏓' },
     { name: 'TAEKWONDO', icon: '🥋' },
@@ -93,7 +94,7 @@ function PrivateCoaching() {
                 <div
                     className="absolute inset-0 -z-20 bg-cover bg-center"
                     style={{
-                        backgroundImage: `url(${imageBase}priv-bgrnd.jpeg)`,
+                        backgroundImage: `url(${imageBase}private.jpg)`,
                     }}
                 />
 
@@ -317,11 +318,11 @@ function PrivateCoaching() {
             <section className="bg-[#ff8900] px-5 py-12 text-white">
                 <div className="mx-auto max-w-[1320px]">
                     <p className="text-center text-xs font-extrabold tracking-[0.35em]">
-                        EXPLORE OUR SPORTS
+                        FIND YOUR PASSION
                     </p>
 
                     <h2 className="mt-3 text-center font-oswald text-4xl font-bold">
-                        Sports Coached
+                        Choose Your Sport
                     </h2>
 
                     <div className="mt-8 grid grid-cols-2 gap-4 sm:grid-cols-4 lg:grid-cols-8">
@@ -406,7 +407,7 @@ function PrivateCoaching() {
                             </ul>
 
                             <a
-                                href="#free-trial"
+                                href="https://forms.google.com/PASTE_YOUR_FORM_LINK_HERE" target="_blank" rel="noopener noreferrer"
                                 className="mt-8 bg-[#09264d] px-4 py-3 text-center text-xs font-extrabold tracking-wider text-white transition hover:bg-orange-500"
                             >
                                 {programme.button}
@@ -483,7 +484,7 @@ function PrivateCoaching() {
 
                     <div className="mt-8 flex justify-center">
                         <a
-                            href="#free-trial"
+                            href="https://forms.google.com/PASTE_YOUR_FORM_LINK_HERE" target="_blank" rel="noopener noreferrer"
                             className="bg-[#09264d] px-10 py-4 text-sm font-extrabold text-white transition hover:bg-white hover:text-[#09264d]"
                         >
                             BOOK A FREE TRIAL

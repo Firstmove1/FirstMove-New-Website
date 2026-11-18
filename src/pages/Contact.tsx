@@ -1,6 +1,7 @@
 
 import { useState, type FormEvent, type ChangeEvent } from 'react';
 import { motion } from 'framer-motion';
+import { Phone } from 'lucide-react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 
@@ -89,6 +90,23 @@ const Contact: React.FC = () => {
                                         className="text-gray-600 hover:text-[#F47B20] transition"
                                     >
                                         info@firstmove.co.in
+                                    </a>
+                                </div>
+                            </div>
+
+                            {/* Phone */}
+                            <div className="flex items-start gap-4">
+                                <div className="w-11 h-11 rounded-full bg-orange-100 flex items-center justify-center text-[#F47B20]">
+                                    <Phone size={20} />
+                                </div>
+
+                                <div>
+                                    <h3 className="font-semibold text-[#172B4D]">Call Us</h3>
+                                    <a
+                                        href="tel:+919136244036"
+                                        className="text-gray-600 hover:text-[#F47B20] transition"
+                                    >
+                                        +91 91362 44036
                                     </a>
                                 </div>
                             </div>

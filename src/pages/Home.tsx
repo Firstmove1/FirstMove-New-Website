@@ -2,6 +2,7 @@
 import React from 'react';
 import Navbar from '../components/Navbar';
 import Hero from '../components/Hero';
+import Services from '../components/Services';
 import SportsVenueManagement from '../components/SportsVenueManagement';
 import StructuredDifference from '../components/StructuredDifference';
 import OurClients from '../components/OurClients';
@@ -13,6 +14,7 @@ const Home: React.FC = () => {
     <>
       <Navbar />
       <Hero />
+      <Services />
       <SportsVenueManagement />
       <StructuredDifference />
       <OurClients />

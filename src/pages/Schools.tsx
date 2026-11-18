@@ -4,17 +4,19 @@ import { motion } from 'framer-motion';
 import {
     Trophy,
     Users,
-    Medal,
-    ChartNoAxesColumnIncreasing,
     GraduationCap,
     BookOpen,
     HeartHandshake,
     ShieldCheck,
     ClipboardList,
     Flag,
+    Dumbbell,
+    Tent,
+    MapPin,
 } from 'lucide-react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
+import pickelImg from '../assets/pickel.png';
 
 const schoolServices = [
     {
@@ -67,39 +69,6 @@ const schoolServices = [
     },
 ];
 
-const benefits = [
-    {
-        icon: Medal,
-        title: 'Expert Sports Coaches',
-        description:
-            'Experienced and verified coaches bring professional knowledge, structured methods and individual attention to every training session.',
-    },
-    {
-        icon: BookOpen,
-        title: 'Structured Curriculum',
-        description:
-            'Age-appropriate training programmes help students build sporting fundamentals, develop techniques and progress with confidence.',
-    },
-    {
-        icon: Users,
-        title: 'Teamwork & Character',
-        description:
-            'Sports encourage collaboration, discipline, leadership and respect while helping students develop stronger connections with peers.',
-    },
-    {
-        icon: ChartNoAxesColumnIncreasing,
-        title: 'Progress Tracking',
-        description:
-            'Regular assessments and clear learning milestones help schools understand student development and identify areas for improvement.',
-    },
-    {
-        icon: Trophy,
-        title: 'Competitive Exposure',
-        description:
-            'Students get opportunities to participate, challenge themselves and experience the values of healthy competition.',
-    },
-];
-
 const sports = [
     { name: 'ATHLETICS', icon: '🏃' },
     { name: 'BADMINTON', icon: '🏸' },
@@ -110,7 +79,7 @@ const sports = [
     { name: 'GYMNASTICS', icon: '🤸' },
     { name: 'JUDO', icon: '🥋' },
     { name: 'PADEL', icon: '🎾' },
-    { name: 'PICKLEBALL', icon: '🏓' },
+    { name: 'PICKLEBALL', icon: <img src={pickelImg} alt="Pickleball" className="w-8 h-8 object-contain" /> },
     { name: 'SKATING', icon: '🛼' },
     { name: 'SWIMMING', icon: '🏊' },
     { name: 'TABLE TENNIS', icon: '🏓' },
@@ -259,45 +228,6 @@ const Schools: React.FC = () => {
                     </div>
                 </section>
 
-                {/* WHY FIRSTMOVE */}
-                <section className="bg-[#F8F8F9] py-20">
-                    <div className="max-w-7xl mx-auto px-6">
-                        <SchoolSectionHeading
-                            label="Why FirstMove"
-                            title="A Better Approach to School Sports"
-                        />
-
-                        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
-                            {benefits.map((item, index) => {
-                                const Icon = item.icon;
-
-                                return (
-                                    <motion.div
-                                        key={item.title}
-                                        initial={{ opacity: 0, y: 25 }}
-                                        whileInView={{ opacity: 1, y: 0 }}
-                                        viewport={{ once: true }}
-                                        transition={{ delay: index * 0.1 }}
-                                        className="bg-white border border-gray-100 rounded-xl p-7 text-center hover:-translate-y-2 hover:shadow-xl transition-all duration-300"
-                                    >
-                                        <div className="w-12 h-12 rounded-full bg-orange-50 text-brand-orange flex items-center justify-center mx-auto mb-5">
-                                            <Icon size={24} />
-                                        </div>
-
-                                        <h3 className="font-poppins text-xl text-navy mb-3">
-                                            {item.title}
-                                        </h3>
-
-                                        <p className="font-poppins text-gray-500 text-sm leading-relaxed">
-                                            {item.description}
-                                        </p>
-                                    </motion.div>
-                                );
-                            })}
-                        </div>
-                    </div>
-                </section>
-
                 {/* SPORTS WE OFFER */}
                 <section className="bg-navy py-16 md:py-20">
                     <div className="max-w-7xl mx-auto px-6">
@@ -437,6 +367,72 @@ const Schools: React.FC = () => {
                     </div>
                 </section>
 
+                {/* MORE WAYS TO PARTNER */}
+                <section className="bg-white py-20 md:py-24">
+                    <div className="max-w-7xl mx-auto px-6">
+
+                        {/* Heading */}
+                        <div className="text-center mb-14">
+                            <p className="font-poppins font-semibold text-brand-orange text-xs tracking-widest uppercase mb-5">
+                                More ways to partner
+                            </p>
+
+                            <h2 className="font-poppins font-bold text-navy text-3xl md:text-4xl lg:text-5xl leading-tight mb-5">
+                                Support that goes beyond<br className="hidden sm:block" /> the timetable.
+                            </h2>
+
+                            <p className="font-poppins text-gray-500 text-sm md:text-base max-w-2xl mx-auto leading-relaxed">
+                                Flexible formats to help schools strengthen participation, identify talent and make better use of their sporting infrastructure.
+                            </p>
+                        </div>
+
+                        {/* Three cards */}
+                        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                            {[
+                                {
+                                    icon: Dumbbell,
+                                    title: 'After-school Sports Academies',
+                                    desc: 'Optional beginner-to-advanced programmes for students seeking more practice and specialised coaching.',
+                                },
+                                {
+                                    icon: Tent,
+                                    title: 'Camps, Clinics & Workshops',
+                                    desc: 'Seasonal sports camps, focused skill clinics, introductory sessions and special-interest workshops.',
+                                },
+                                {
+                                    icon: MapPin,
+                                    title: 'Sports Pathway & Facility Advisory',
+                                    desc: 'Guidance on sporting choices, talent pathways, programme design and better use of existing school sports spaces.',
+                                },
+                            ].map((item, index) => {
+                                const Icon = item.icon;
+                                return (
+                                    <motion.div
+                                        key={item.title}
+                                        initial={{ opacity: 0, y: 25 }}
+                                        whileInView={{ opacity: 1, y: 0 }}
+                                        viewport={{ once: true }}
+                                        transition={{ delay: index * 0.12 }}
+                                        className="bg-[#EEF0F5] rounded-2xl p-8 flex flex-col hover:-translate-y-1.5 hover:shadow-md transition-all duration-300"
+                                    >
+                                        <div className="w-10 h-10 rounded-lg bg-white/70 flex items-center justify-center text-navy mb-6">
+                                            <Icon size={20} strokeWidth={1.7} />
+                                        </div>
+
+                                        <h3 className="font-poppins font-bold text-navy text-base mb-3">
+                                            {item.title}
+                                        </h3>
+
+                                        <p className="font-poppins text-gray-500 text-sm leading-relaxed">
+                                            {item.desc}
+                                        </p>
+                                    </motion.div>
+                                );
+                            })}
+                        </div>
+                    </div>
+                </section>
+
                 {/* OUR PARTNERS */}
                 <section className="bg-[#F8F8F9] py-20">
                     <div className="max-w-7xl mx-auto px-6">
@@ -490,7 +486,7 @@ const Schools: React.FC = () => {
                             Let's Build Champions
                         </span>
 
-                        <h2 className="font-poppins text-white font-bold text-4xl sm:text-5xl mt-4 mb-5">
+                        <h2 className="font-poppins text-white font-semibold text-3xl sm:text-4xl md:text-5xl mt-4 mb-5 whitespace-nowrap">
                             Bring FirstMove to Your School
                         </h2>
 

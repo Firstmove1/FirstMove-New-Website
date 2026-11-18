@@ -3,7 +3,6 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { School, User, CalendarDays } from 'lucide-react';
 import { services } from '../data/services';
-import WhyFirstMove from './WhyFirstMove';
 
 const iconMap: Record<string, React.ReactNode> = {
   School: <School size={34} strokeWidth={1.6} />,
@@ -64,9 +63,6 @@ const Services: React.FC = () => {
           </div>
         </div>
       </section>
-
-      {/* Why FirstMove below all three service cards */}
-      <WhyFirstMove />
     </>
   );
 };

@@ -13,6 +13,8 @@
     font-family: 'Poppins', sans-serif;
     color: #111827;
     overflow-x: hidden;
+    overflow-y: scroll;        /* always reserve scrollbar gutter */
+    scrollbar-gutter: stable;  /* keeps layout stable; aligns fixed navbar with page content */
     margin: 0;
     padding: 0;
   }

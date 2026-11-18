@@ -13,6 +13,7 @@ const Hero: React.FC = () => {
         minHeight: '600px',
         height: '100svh',
         maxHeight: '860px',
+        paddingTop: '72px',   /* offset fixed navbar — centering is relative to remaining space */
       }}
     >
       {/* Background image — position shifts on mobile to frame the athlete */}
@@ -45,8 +46,8 @@ const Hero: React.FC = () => {
         }}
       />
 
-      {/* Content — top padding accounts for fixed 72px navbar + comfortable gap */}
-      <div className="relative z-10 w-full max-w-7xl mx-auto px-6 md:px-10 lg:px-6 pt-[96px] md:pt-28 pb-10">
+      {/* Content — nudged down by navbar height so flex centering looks balanced */}
+      <div className="relative z-10 w-full max-w-7xl mx-auto px-6 md:px-10 lg:px-6 pb-10">
 
         {/* Intro label */}
         <motion.p
