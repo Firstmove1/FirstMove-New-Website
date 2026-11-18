@@ -5,6 +5,7 @@ import Footer from '../components/Footer';
 import WhyFirstMove from '../components/WhyFirstMove';
 import pickelImg from '../assets/pickel.png';
 import padelImg from '../assets/padel.png';
+import tennisImg from '../assets/tennis.png';
 
 const imageBase = `${import.meta.env.BASE_URL}images/private-coaching/`;
 
@@ -23,7 +24,7 @@ const sports = [
     { name: 'SWIMMING', icon: '🏊' },
     { name: 'TABLE TENNIS', icon: '🏓' },
     { name: 'TAEKWONDO', icon: '🥋' },
-    { name: 'TENNIS', icon: '🎾' },
+    { name: 'TENNIS', icon: <img src={tennisImg} alt="Tennis" className="w-10 h-10 object-contain" /> },
 ];
 
 const programmes = [
