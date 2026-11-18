@@ -1,5 +1,5 @@
 
-import { useState, type ChangeEvent, type FormEvent } from 'react';
+import React, { useState, type ChangeEvent, type FormEvent } from 'react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import WhyFirstMove from '../components/WhyFirstMove';
@@ -91,14 +91,21 @@ function PrivateCoaching() {
 
             {/* HERO SECTION */}
             <section className="relative isolate overflow-hidden bg-[#071a30] text-white">
+                {/* Background image */}
                 <div
-                    className="absolute inset-0 -z-20 bg-cover bg-center"
+                    id="coaching-hero-bg"
+                    className="absolute inset-0 -z-20 bg-cover"
                     style={{
                         backgroundImage: `url(${imageBase}private.jpg)`,
+                        backgroundPosition: 'center center',
                     }}
                 />
 
-                <div className="absolute inset-0 -z-10 bg-[#06182c]/65" />
+                {/* Desktop overlay */}
+                <div className="absolute inset-0 -z-10 hidden md:block bg-[#06182c]/60" />
+
+                {/* Mobile overlay — stronger so text is legible */}
+                <div className="absolute inset-0 -z-10 md:hidden bg-[#06182c]/75" />
 
                 <div className="mx-auto grid w-full max-w-[1440px] grid-cols-1 items-center gap-10 px-6 pt-36 pb-14 md:grid-cols-[minmax(0,1.1fr)_minmax(0,0.9fr)] md:px-10 lg:gap-14 lg:pt-36 lg:pb-16">
 

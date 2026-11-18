@@ -87,4 +87,9 @@
   #hero-bg {
     background-position: 65% center;
   }
+
+  /* Private coaching hero — pull left so the coach + student are visible */
+  #coaching-hero-bg {
+    background-position: 30% center;
+  }
 }

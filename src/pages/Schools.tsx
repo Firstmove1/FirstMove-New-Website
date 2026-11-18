@@ -486,7 +486,7 @@ const Schools: React.FC = () => {
                             Let's Build Champions
                         </span>
 
-                        <h2 className="font-poppins text-white font-semibold text-3xl sm:text-4xl md:text-5xl mt-4 mb-5 whitespace-nowrap">
+                        <h2 className="font-poppins text-white font-semibold text-2xl sm:text-4xl md:text-5xl mt-4 mb-5">
                             Bring FirstMove to Your School
                         </h2>
 
