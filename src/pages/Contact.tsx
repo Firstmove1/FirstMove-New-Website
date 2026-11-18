@@ -6,6 +6,9 @@ import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import contactBg from '../assets/contact-bg.jpg';
 
+const GOOGLE_SCRIPT_URL =
+    'https://script.google.com/macros/s/AKfycbweCsdBycmdy0aoPoWn1EtwchsZhn7-qdNMEFpStoDWR-kE7yjQG_P7smtqPuAq_vr_/exec';
+
 const Contact: React.FC = () => {
     const [formData, setFormData] = useState({
         name: '',
@@ -17,6 +20,9 @@ const Contact: React.FC = () => {
 
     const [submitted, setSubmitted] = useState(false);
 
+    const [isSubmitting, setIsSubmitting] = useState(false);
+    const [submitError, setSubmitError] = useState('');
+
     const handleChange = (
         e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
     ) => {
@@ -26,9 +32,35 @@ const Contact: React.FC = () => {
         });
     };
 
-    const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
+    const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
         e.preventDefault();
-        setSubmitted(true);
+        setIsSubmitting(true);
+        setSubmitError('');
+
+        try {
+            await fetch(GOOGLE_SCRIPT_URL, {
+                method: 'POST',
+                mode: 'no-cors',
+                headers: {
+                    'Content-Type': 'text/plain;charset=utf-8',
+                },
+                body: JSON.stringify({
+                    formType: 'contact',
+                    name: formData.name,
+                    phone: formData.phone,
+                    email: formData.email,
+                    location: formData.location,
+                    message: formData.message,
+                }),
+            });
+
+            setSubmitted(true);
+        } catch (error) {
+            console.error('Form submission failed:', error);
+            setSubmitError('Unable to submit your enquiry. Please try again.');
+        } finally {
+            setIsSubmitting(false);
+        }
     };
 
     return (
@@ -256,11 +288,18 @@ const Contact: React.FC = () => {
                                             />
                                         </div>
 
+                                        {submitError && (
+                                            <p className="text-red-500 text-sm text-center">
+                                                {submitError}
+                                            </p>
+                                        )}
+
                                         <button
                                             type="submit"
-                                            className="w-full bg-[#F47B20] hover:bg-[#E66C12] text-white font-semibold py-3.5 rounded-lg transition duration-300"
+                                            disabled={isSubmitting}
+                                            className="w-full bg-[#F47B20] hover:bg-[#E66C12] disabled:opacity-60 text-white font-semibold py-3.5 rounded-lg transition duration-300"
                                         >
-                                            Submit Enquiry →
+                                            {isSubmitting ? 'Submitting...' : 'Submit Enquiry →'}
                                         </button>
 
                                         <p className="text-xs text-gray-400 text-center">

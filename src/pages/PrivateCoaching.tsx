@@ -9,6 +9,9 @@ import tennisImg from '../assets/tennis.png';
 
 const imageBase = `${import.meta.env.BASE_URL}images/private-coaching/`;
 
+const GOOGLE_SCRIPT_URL =
+    'https://script.google.com/macros/s/AKfycbweCsdBycmdy0aoPoWn1EtwchsZhn7-qdNMEFpStoDWR-kE7yjQG_P7smtqPuAq_vr_/exec';
+
 const sports = [
     { name: 'ATHLETICS', icon: '🏃' },
     { name: 'BADMINTON', icon: '🏸' },
@@ -73,6 +76,9 @@ function PrivateCoaching() {
 
     const [submitted, setSubmitted] = useState(false);
 
+    const [isSubmitting, setIsSubmitting] = useState(false);
+    const [submitError, setSubmitError] = useState('');
+
     const handleChange = (
         event: ChangeEvent<HTMLInputElement | HTMLSelectElement>
     ) => {
@@ -82,9 +88,37 @@ function PrivateCoaching() {
         }));
     };
 
-    const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
+    const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
         event.preventDefault();
-        setSubmitted(true);
+        setIsSubmitting(true);
+        setSubmitError('');
+
+        try {
+            await fetch(GOOGLE_SCRIPT_URL, {
+                method: 'POST',
+                mode: 'no-cors',
+                headers: {
+                    'Content-Type': 'text/plain;charset=utf-8',
+                },
+                body: JSON.stringify({
+                    formType: 'trial',
+                    name: formData.name,
+                    phone: formData.phone,
+                    age: formData.age,
+                    email: formData.email,
+                    sport: formData.sport,
+                    location: formData.location,
+                    programme: formData.programme,
+                }),
+            });
+
+            setSubmitted(true);
+        } catch (error) {
+            console.error('Free trial submission failed:', error);
+            setSubmitError('Unable to submit your booking. Please try again.');
+        } finally {
+            setIsSubmitting(false);
+        }
     };
 
     return (
@@ -309,12 +343,19 @@ function PrivateCoaching() {
                                     </select>
                                 </label>
 
+                                {submitError && (
+                                    <p className="text-center text-sm text-red-500 sm:col-span-2">
+                                        {submitError}
+                                    </p>
+                                )}
+
                                 {/* SUBMIT BUTTON */}
                                 <button
                                     type="submit"
-                                    className="w-full rounded-md bg-[#06234b] py-3.5 font-semibold tracking-wide text-white transition-all duration-300 hover:bg-orange-500 sm:col-span-2"
+                                    disabled={isSubmitting}
+                                    className="w-full rounded-md bg-[#06234b] py-3.5 font-semibold tracking-wide text-white transition-all duration-300 hover:bg-orange-500 disabled:opacity-60 sm:col-span-2"
                                 >
-                                    BOOK MY FREE TRIAL
+                                    {isSubmitting ? 'SUBMITTING...' : 'BOOK MY FREE TRIAL'}
                                 </button>
                             </form>
                         )}
