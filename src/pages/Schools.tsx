@@ -6,10 +6,6 @@ import {
     Users,
     Medal,
     ChartNoAxesColumnIncreasing,
-    Target,
-    Lightbulb,
-    Compass,
-    Award,
     GraduationCap,
     BookOpen,
     HeartHandshake,
@@ -120,33 +116,6 @@ const sports = [
     { name: 'TABLE TENNIS', icon: '🏓' },
     { name: 'TAEKWONDO', icon: '🥋' },
     { name: 'TENNIS', icon: '🎾' },
-];
-
-const approach = [
-    {
-        icon: Lightbulb,
-        title: 'Understand the School',
-        description:
-            'We begin by understanding the school’s requirements, student demographics, available facilities and sporting objectives.',
-    },
-    {
-        icon: Compass,
-        title: 'Design the Programme',
-        description:
-            'We develop an age-appropriate sports programme based on the school’s needs, available infrastructure and student interests.',
-    },
-    {
-        icon: Target,
-        title: 'Train with Purpose',
-        description:
-            'Our coaches conduct structured sessions focused on skill development, participation, fitness and sporting fundamentals.',
-    },
-    {
-        icon: Award,
-        title: 'Evaluate & Improve',
-        description:
-            'Regular assessments and feedback help monitor progress, recognise achievements and continuously improve the programme.',
-    },
 ];
 
 const partnershipCards = [
