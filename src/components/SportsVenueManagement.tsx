@@ -7,7 +7,9 @@ import {
     Settings,
     Megaphone,
 } from 'lucide-react';
-import sportMngtImage from '../assets/sport-mngt.jpeg';
+
+const sportMngtImage =
+    'https://images.unsplash.com/photo-1686067388146-6fe2371f8eaa?auto=format&fit=crop&w=1800&q=85';
 
 const pillars = [
     {
@@ -42,16 +44,16 @@ const pillars = [
 
 const SportsVenueManagement: React.FC = () => {
     return (
-        <section className="bg-[#172B4D] py-20 md:py-24 overflow-hidden">
-            <div className="max-w-7xl mx-auto px-6">
+        <section className="bg-[#172B4D] py-16 md:py-20 overflow-hidden">
+            <div className="max-w-[1380px] mx-auto px-6">
 
-                {/* Section Heading */}
+                {/* SECTION HEADING */}
                 <motion.div
                     initial={{ opacity: 0, y: 25 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.6 }}
-                    className="text-center mb-14"
+                    className="text-center mb-12"
                 >
                     <p className="font-poppins font-medium text-brand-orange text-sm mb-5">
                         Beyond the game
@@ -70,27 +72,28 @@ const SportsVenueManagement: React.FC = () => {
                     </p>
                 </motion.div>
 
-                {/* Image and Content */}
-                <div className="grid lg:grid-cols-2 gap-10 lg:gap-14 items-center">
+                {/* IMAGE AND FOUR PILLARS */}
+                <div className="grid grid-cols-1 lg:grid-cols-[1.12fr_0.88fr] gap-8 lg:gap-10 items-stretch">
 
-                    {/* Venue Image */}
+                    {/* LARGER VENUE IMAGE */}
                     <motion.div
                         initial={{ opacity: 0, x: -30 }}
                         whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: true }}
                         transition={{ duration: 0.7 }}
-                        className="relative"
+                        className="relative h-[360px] sm:h-[420px] lg:h-[484px] w-full"
                     >
-                        <div className="rounded-2xl overflow-hidden h-[280px] sm:h-[350px] md:h-[430px] shadow-xl">
+                        <div className="w-full h-full rounded-2xl overflow-hidden shadow-2xl">
                             <img
                                 src={sportMngtImage}
-                                alt="Sports venue management facility"
-                                className="w-full h-full object-cover object-center"
+                                alt="People playing tennis at a sports facility"
+                                className="w-full h-full object-cover object-center transition-transform duration-700 hover:scale-105"
                                 loading="lazy"
                             />
                         </div>
 
-                        <div className="absolute -bottom-5 right-4 md:-right-5 bg-brand-orange text-white rounded-xl px-6 py-5 shadow-xl">
+                        {/* VENUE SOLUTIONS BADGE */}
+                        <div className="absolute -bottom-4 right-4 md:-right-4 z-10 bg-brand-orange text-white rounded-xl px-6 py-5 shadow-xl">
                             <p className="font-poppins text-3xl font-semibold">
                                 360°
                             </p>
@@ -100,8 +103,8 @@ const SportsVenueManagement: React.FC = () => {
                         </div>
                     </motion.div>
 
-                    {/* Four Pillars */}
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-5 lg:mt-0">
+                    {/* FOUR PILLARS */}
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 lg:h-[484px] lg:grid-rows-2">
                         {pillars.map((pillar, index) => {
                             const Icon = pillar.icon;
 
@@ -115,16 +118,16 @@ const SportsVenueManagement: React.FC = () => {
                                         duration: 0.5,
                                         delay: index * 0.1,
                                     }}
-                                    className="bg-white/5 border border-white/10 rounded-xl p-6 min-h-[220px] flex flex-col hover:bg-white/10 transition duration-300"
+                                    className="bg-white/5 border border-white/10 rounded-xl p-5 sm:p-6 min-h-[220px] h-full flex flex-col hover:bg-white/10 hover:border-brand-orange/40 transition duration-300"
                                 >
-                                    <div className="flex items-center justify-between mb-6">
+                                    <div className="flex items-center justify-between mb-5">
                                         <Icon
                                             size={30}
                                             strokeWidth={1.6}
                                             className="text-brand-orange"
                                         />
 
-                                        <span className="font-poppins text-3xl text-white/20">
+                                        <span className="font-poppins text-3xl font-medium text-white/20">
                                             {pillar.number}
                                         </span>
                                     </div>

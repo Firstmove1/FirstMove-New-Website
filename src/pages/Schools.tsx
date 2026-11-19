@@ -158,12 +158,12 @@ const Schools: React.FC = () => {
                                 For Schools
                             </span>
 
-                            <h1 className="font-poppins text-white text-5xl sm:text-6xl md:text-7xl leading-[1.12] mt-5 mb-6">
+                            <h1 className="font-poppins text-white font-bold text-5xl sm:text-6xl md:text-7xl leading-[1.12] mt-5 mb-6">
                                 Make The Next
                                 <br />
                                 Sports Star
                                 <br />
-                                <span className="text-brand-orange">
+                                <span className="text-brand-orange font-bold">
                                     From Your School.
                                 </span>
                             </h1>
@@ -188,8 +188,8 @@ const Schools: React.FC = () => {
                 <section className="bg-[#F8F8F9] py-20 md:py-24">
                     <div className="max-w-7xl mx-auto px-6">
                         <SchoolSectionHeading
-                            label="Our Services"
-                            title="What We Bring to Your School"
+                            label="Why School Choose Us"
+                            title="Our Value Addition to Your School"
                         />
 
                         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
@@ -234,8 +234,8 @@ const Schools: React.FC = () => {
                 <section className="bg-navy py-16 md:py-20">
                     <div className="max-w-7xl mx-auto px-6">
                         <SchoolSectionHeading
-                            label="Explore Our Sports"
-                            title="Sports We Offer"
+                            label="One Academy"
+                            title="Sports Our Coaches Teach"
                             light
                         />
 
@@ -249,7 +249,7 @@ const Schools: React.FC = () => {
                                     transition={{ delay: index * 0.04 }}
                                     className="bg-white rounded-xl px-3 py-5 flex flex-col items-center justify-center min-h-[120px] md:min-h-[130px] hover:-translate-y-1.5 hover:shadow-lg transition-all duration-300"
                                 >
-                                    <span className="font-poppins text-[10px] sm:text-xs font-bold text-brand-orange tracking-wider uppercase text-center mb-3">
+                                    <span className="font-poppins text-[12px] sm:text-xs font-bold text-brand-orange tracking-wider uppercase text-center mb-3">
                                         {sport.name}
                                     </span>
 
@@ -266,42 +266,47 @@ const Schools: React.FC = () => {
                     </div>
                 </section>
 
+
                 {/* OUR APPROACH */}
                 <section className="bg-white py-20 md:py-24">
                     <div className="max-w-7xl mx-auto px-6">
-                        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+                        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
 
-                            {/* Left — image + orange callout card */}
+                            {/* Left — Image + Orange Callout */}
                             <motion.div
                                 initial={{ opacity: 0, x: -30 }}
                                 whileInView={{ opacity: 1, x: 0 }}
                                 viewport={{ once: true }}
                                 transition={{ duration: 0.6 }}
-                                className="relative"
+                                className="relative flex items-center h-full"
                             >
-                                <img
-                                    src={`${import.meta.env.BASE_URL}images/schools/approach.jpg`}
-                                    alt="Students cycling in a school sports event"
-                                    className="w-full h-[380px] md:h-[500px] object-cover object-center rounded-2xl shadow-xl"
-                                />
+                                <div className="w-full h-[420px] md:h-[560px] overflow-hidden rounded-2xl shadow-xl">
+                                    <img
+                                        src={`${import.meta.env.BASE_URL}images/schools/approach.jpg`}
+                                        alt="Indian school students participating in sports activities"
+                                        className="w-full h-full object-cover object-center"
+                                        loading="lazy"
+                                    />
+                                </div>
 
-                                {/* Orange callout card */}
-                                <div className="absolute bottom-6 left-6 bg-brand-orange text-white rounded-xl px-6 py-5 max-w-[220px] shadow-xl">
-                                    <p className="font-poppins font-bold text-xl leading-snug mb-1">
-                                        Every child.
+                                {/* Orange Callout */}
+                                <div className="absolute bottom-6 left-6 bg-brand-orange text-white rounded-xl px-7 py-6 max-w-[290px] shadow-xl">
+                                    <p className="font-poppins font-bold text-xl leading-snug mb-2">
+                                        Progress you can see.
                                     </p>
-                                    <p className="font-poppins text-white/90 text-sm leading-relaxed">
-                                        A starting point, a pathway and a chance to progress.
+                                    <p className="font-poppins text-white/95 text-sm leading-relaxed">
+                                        From first session to report card, every child’s journey is tracked.
                                     </p>
                                 </div>
                             </motion.div>
 
-                            {/* Right — heading + numbered steps */}
+                            {/* Right — Heading + Numbered Steps */}
                             <motion.div
                                 initial={{ opacity: 0, x: 30 }}
                                 whileInView={{ opacity: 1, x: 0 }}
                                 viewport={{ once: true }}
                                 transition={{ duration: 0.6 }}
+                                className="flex flex-col justify-center"
                             >
                                 <span className="section-label">Our Approach</span>
 
@@ -315,7 +320,6 @@ const Schools: React.FC = () => {
                                     is built around all three.
                                 </p>
 
-                                {/* Numbered steps */}
                                 <div className="space-y-6">
                                     {[
                                         {
@@ -347,7 +351,6 @@ const Schools: React.FC = () => {
                                             transition={{ delay: i * 0.1 }}
                                             className="flex gap-5 items-start"
                                         >
-                                            {/* Step number bubble */}
                                             <span className="flex-shrink-0 w-9 h-9 rounded-full border-2 border-gray-200 flex items-center justify-center font-poppins font-semibold text-xs text-gray-400">
                                                 {step.num}
                                             </span>
@@ -369,75 +372,10 @@ const Schools: React.FC = () => {
                     </div>
                 </section>
 
-                {/* MORE WAYS TO PARTNER */}
-                <section className="bg-white py-20 md:py-24">
-                    <div className="max-w-7xl mx-auto px-6">
-
-                        {/* Heading */}
-                        <div className="text-center mb-14">
-                            <p className="font-poppins font-semibold text-brand-orange text-xs tracking-widest uppercase mb-5">
-                                More ways to partner
-                            </p>
-
-                            <h2 className="font-poppins font-bold text-navy text-3xl md:text-4xl lg:text-5xl leading-tight mb-5">
-                                Support that goes beyond<br className="hidden sm:block" /> the timetable.
-                            </h2>
-
-                            <p className="font-poppins text-gray-500 text-sm md:text-base max-w-2xl mx-auto leading-relaxed">
-                                Flexible formats to help schools strengthen participation, identify talent and make better use of their sporting infrastructure.
-                            </p>
-                        </div>
-
-                        {/* Three cards */}
-                        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                            {[
-                                {
-                                    icon: Dumbbell,
-                                    title: 'After-school Sports Academies',
-                                    desc: 'Optional beginner-to-advanced programmes for students seeking more practice and specialised coaching.',
-                                },
-                                {
-                                    icon: Tent,
-                                    title: 'Camps, Clinics & Workshops',
-                                    desc: 'Seasonal sports camps, focused skill clinics, introductory sessions and special-interest workshops.',
-                                },
-                                {
-                                    icon: MapPin,
-                                    title: 'Sports Pathway & Facility Advisory',
-                                    desc: 'Guidance on sporting choices, talent pathways, programme design and better use of existing school sports spaces.',
-                                },
-                            ].map((item, index) => {
-                                const Icon = item.icon;
-                                return (
-                                    <motion.div
-                                        key={item.title}
-                                        initial={{ opacity: 0, y: 25 }}
-                                        whileInView={{ opacity: 1, y: 0 }}
-                                        viewport={{ once: true }}
-                                        transition={{ delay: index * 0.12 }}
-                                        className="bg-[#EEF0F5] rounded-2xl p-8 flex flex-col hover:-translate-y-1.5 hover:shadow-md transition-all duration-300"
-                                    >
-                                        <div className="w-10 h-10 rounded-lg bg-white/70 flex items-center justify-center text-navy mb-6">
-                                            <Icon size={20} strokeWidth={1.7} />
-                                        </div>
-
-                                        <h3 className="font-poppins font-bold text-navy text-base mb-3">
-                                            {item.title}
-                                        </h3>
-
-                                        <p className="font-poppins text-gray-500 text-sm leading-relaxed">
-                                            {item.desc}
-                                        </p>
-                                    </motion.div>
-                                );
-                            })}
-                        </div>
-                    </div>
-                </section>
 
                 {/* OUR PARTNERS */}
                 <section className="bg-[#F8F8F9] py-20">
-                    <div className="max-w-7xl mx-auto px-6">
+                    <div className="max-w-7xl mx-auto px-6 font-bold">
                         <SchoolSectionHeading
                             label="Our Partners"
                             title="Growing Together"
@@ -489,7 +427,8 @@ const Schools: React.FC = () => {
                         </span>
 
                         <h2 className="font-poppins text-white font-semibold text-2xl sm:text-4xl md:text-5xl mt-4 mb-5">
-                            Bring FirstMove to Your School
+                            Bring FirstMove to<br />
+                            Your School
                         </h2>
 
                         <p className="text-white/90 font-poppins leading-relaxed mb-9">

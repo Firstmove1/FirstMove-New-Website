@@ -19,11 +19,11 @@ const Services: React.FC = () => {
           {/* Section heading */}
           <div className="text-center mb-14">
             <p className="font-poppins font-medium text-brand-orange text-sm mb-4">
-              What we offer
+              What We Do
             </p>
 
             <h2 className="font-poppins font-semibold text-navy text-3xl md:text-4xl">
-              Our Services
+              Our Expertise
             </h2>
 
             <p className="font-poppins text-gray-600 text-sm md:text-base max-w-2xl mx-auto mt-5 leading-relaxed">

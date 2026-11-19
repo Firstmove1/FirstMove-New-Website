@@ -5,30 +5,32 @@ import { ArrowRight } from 'lucide-react';
 
 const FinalCTA: React.FC = () => {
   return (
-    <section
-      className="bg-brand-orange flex items-center justify-center text-center"
-      style={{ minHeight: '400px', padding: '80px 24px' }}
-    >
-      <div className="w-full max-w-7xl mx-auto">
+    <section className="w-full min-h-[400px] bg-brand-orange flex items-center justify-center text-center px-6 py-20">
+      <div className="w-full max-w-7xl mx-auto flex flex-col items-center">
+
         <motion.div
           initial={{ opacity: 0, y: 25 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
+          className="w-full flex flex-col items-center text-center"
         >
-          <p className="font-poppins font-semibold text-white/80 text-xs md:text-sm uppercase tracking-[0.2em] mb-5">
+          {/* Eyebrow Text */}
+          <p className="w-full font-poppins font-semibold text-white/80 text-xs md:text-sm uppercase tracking-[0.2em] mb-5 text-center">
             Your Sporting Journey Starts Here
           </p>
 
+          {/* Main Heading */}
           <h2
-            className="font-poppins font-bold text-white leading-tight mb-6"
+            className="w-full font-poppins font-bold text-white leading-tight mb-6 text-center"
             style={{ fontSize: 'clamp(2rem, 4.5vw, 3.7rem)' }}
           >
             Ready to Make Your First Move?
           </h2>
 
+          {/* Description */}
           <p
-            className="font-poppins text-white/90 leading-relaxed mx-auto mb-9"
+            className="w-full font-poppins text-white/90 leading-relaxed mb-9 text-center mx-auto"
             style={{
               fontSize: 'clamp(0.95rem, 1.4vw, 1.15rem)',
               maxWidth: '700px',
@@ -38,11 +40,12 @@ const FinalCTA: React.FC = () => {
             personalised coaching, we're here to help you get started.
           </p>
 
+          {/* CTA Button */}
           <motion.a
             href={`${import.meta.env.BASE_URL}?page=contact`}
             whileHover={{ scale: 1.04 }}
             whileTap={{ scale: 0.97 }}
-            className="inline-flex items-center gap-3 bg-white text-brand-orange font-poppins font-semibold text-sm px-9 py-4 rounded-md hover:bg-slate-100 transition-colors duration-300"
+            className="inline-flex items-center justify-center gap-3 bg-white text-brand-orange font-poppins font-semibold text-sm px-9 py-4 rounded-md hover:bg-slate-100 transition-colors duration-300"
           >
             Contact Us
             <ArrowRight size={20} />

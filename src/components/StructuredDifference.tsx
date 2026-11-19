@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
-import { NotebookPen, Accessibility, Users } from 'lucide-react';
+import { NotebookPen, ChartNoAxesCombined, Users } from 'lucide-react';
 
 const differenceCards = [
   {
@@ -14,7 +14,7 @@ const differenceCards = [
     id: '02',
     title: 'Progress That You Can See',
     desc: 'We believe improvement should be measurable. Regular assessments and constructive feedback help participants and parents understand progress, recognise strengths and identify areas for development.',
-    icon: <Accessibility size={38} strokeWidth={1.3} />,
+    icon: <ChartNoAxesCombined size={38} strokeWidth={1.3} />,
   },
   {
     id: '03',
