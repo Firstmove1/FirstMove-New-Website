@@ -94,13 +94,12 @@ const Hero: React.FC = () => {
           className="flex flex-wrap gap-4"
         >
           {/* Schools */}
+
+
           <a
             href={`${import.meta.env.BASE_URL}?page=schools`}
-            className="inline-flex items-center gap-3 font-poppins font-semibold text-sm text-white px-6 py-3.5 transition-all duration-200 hover:-translate-y-0.5"
-            style={{
-              background: '#FF9000',
-              borderRadius: '6px',
-            }}
+            className="inline-flex items-center justify-center gap-3 font-poppins font-semibold text-sm text-white px-8 py-4 rounded-md transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
+            style={{ background: '#FF9000' }}
             onMouseEnter={e =>
               (e.currentTarget.style.background = '#e07d00')
             }
@@ -112,28 +111,27 @@ const Hero: React.FC = () => {
             <ArrowRight size={18} />
           </a>
 
+
           {/* Private Coaching */}
+
           <a
             href={`${import.meta.env.BASE_URL}?page=coaching`}
-            className="inline-flex items-center gap-3 font-poppins font-semibold text-sm text-white px-6 py-3.5 transition-all duration-200 hover:-translate-y-0.5"
-            style={{
-              background: 'rgba(255,255,255,0.08)',
-              border: '1.5px solid rgba(255,255,255,0.5)',
-              borderRadius: '6px',
-            }}
+            className="inline-flex items-center justify-center gap-3 font-poppins font-semibold text-sm text-white px-8 py-4 rounded-md transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
+            style={{ background: '#FF9000' }}
             onMouseEnter={e =>
-              (e.currentTarget.style.background = 'rgba(255,255,255,0.18)')
+              (e.currentTarget.style.background = '#e07d00')
             }
             onMouseLeave={e =>
-              (e.currentTarget.style.background = 'rgba(255,255,255,0.08)')
+              (e.currentTarget.style.background = '#FF9000')
             }
           >
             Private Coaching
             <ArrowRight size={18} />
           </a>
+
         </motion.div>
       </div>
-    </section>
+    </section >
   );
 };
 

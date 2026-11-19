@@ -2,6 +2,8 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 
+const SHOW_OUR_CLIENTS = false;
+
 const clients = [
     {
         name: 'JBCN',
@@ -21,11 +23,11 @@ const clients = [
 ];
 
 const OurClients: React.FC = () => {
+    if (!SHOW_OUR_CLIENTS) return null;
+
     return (
         <section className="bg-white py-20 lg:py-24">
             <div className="max-w-7xl mx-auto px-6">
-
-                {/* Section Heading */}
                 <div className="text-center mb-14">
                     <p className="font-poppins font-semibold text-brand-orange text-base md:text-lg mb-5">
                         Our associations
@@ -41,9 +43,7 @@ const OurClients: React.FC = () => {
                     </p>
                 </div>
 
-                {/* Client Cards */}
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 items-stretch">
-
                     {clients.map((client, index) => (
                         <motion.div
                             key={client.name}
@@ -75,7 +75,6 @@ const OurClients: React.FC = () => {
                             )}
                         </motion.div>
                     ))}
-
                 </div>
             </div>
         </section>

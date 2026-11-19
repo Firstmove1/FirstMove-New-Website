@@ -10,6 +10,7 @@ import {
     ShieldCheck,
     ClipboardList,
     Flag,
+    ArrowRight,
 } from 'lucide-react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
@@ -171,12 +172,15 @@ const Schools: React.FC = () => {
                                 your students.
                             </p>
 
+
                             <a
                                 href={`${import.meta.env.BASE_URL}?page=contact`}
-                                className="inline-flex items-center justify-center bg-brand-orange hover:bg-brand-orange-dark text-white font-poppins font-semibold text-sm px-8 py-4 rounded-md transition-all duration-300"
+                                className="inline-flex items-center justify-center gap-3 bg-brand-orange hover:bg-brand-orange-dark text-white font-poppins font-semibold text-sm px-8 py-4 rounded-md transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
                             >
                                 Book an Appointment
+                                <ArrowRight size={18} />
                             </a>
+
                         </motion.div>
                     </div>
                 </section>
@@ -433,12 +437,17 @@ const Schools: React.FC = () => {
                             of your school's sporting journey.
                         </p>
 
+
+
                         <a
                             href={`${import.meta.env.BASE_URL}?page=contact`}
-                            className="inline-flex items-center justify-center bg-white text-navy px-8 py-4 rounded-md font-poppins font-bold text-xs uppercase tracking-wider hover:bg-navy hover:text-white transition-all"
+                            className="inline-flex items-center justify-center gap-3 bg-white text-navy hover:bg-navy hover:text-white px-8 py-4 rounded-md font-poppins font-semibold text-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
                         >
                             Book an Appointment
+                            <ArrowRight size={18} />
                         </a>
+
+
                     </div>
                 </section>
 

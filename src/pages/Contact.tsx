@@ -1,7 +1,7 @@
 
 import { useState, type FormEvent, type ChangeEvent } from 'react';
 import { motion } from 'framer-motion';
-import { Phone } from 'lucide-react';
+import { Phone, MapPin } from 'lucide-react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import contactBg from '../assets/contact-bg.jpg';
@@ -9,22 +9,22 @@ import contactBg from '../assets/contact-bg.jpg';
 const GOOGLE_SCRIPT_URL =
     'https://script.google.com/macros/s/AKfycbweCsdBycmdy0aoPoWn1EtwchsZhn7-qdNMEFpStoDWR-kE7yjQG_P7smtqPuAq_vr_/exec';
 
-const Contact: React.FC = () => {
+const Contact = () => {
     const [formData, setFormData] = useState({
         name: '',
         phone: '',
         email: '',
         location: '',
+        enquiryType: '',
         message: '',
     });
 
     const [submitted, setSubmitted] = useState(false);
-
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [submitError, setSubmitError] = useState('');
 
     const handleChange = (
-        e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+        e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
     ) => {
         setFormData({
             ...formData,
@@ -50,6 +50,7 @@ const Contact: React.FC = () => {
                     phone: formData.phone,
                     email: formData.email,
                     location: formData.location,
+                    enquiryType: formData.enquiryType,
                     message: formData.message,
                 }),
             });
@@ -77,7 +78,6 @@ const Contact: React.FC = () => {
                         backgroundPosition: 'center',
                     }}
                 >
-                    {/* Light overlay so text remains readable over the white image */}
                     <div className="absolute inset-0 bg-white/70" />
 
                     <motion.div
@@ -86,7 +86,7 @@ const Contact: React.FC = () => {
                         transition={{ duration: 0.6 }}
                         className="relative z-10 max-w-4xl mx-auto"
                     >
-                        <p className="text-[#F47B20] font-semibold tracking-[0.2em] text-sm mb-5">
+                        <p className="text-[#F47B20] font-semibold tracking-[0.1em] text-sm mb-5">
                             We'd Love to Hear From You
                         </p>
 
@@ -107,7 +107,7 @@ const Contact: React.FC = () => {
 
                         {/* Left Content */}
                         <div className="pt-4">
-                            <p className="text-[#F47B20] font-semibold tracking-widest text-sm mb-4">
+                            <p className="text-[#F47B20] font-semibold tracking-normal text-sm mb-4">
                                 Get in Touch
                             </p>
 
@@ -121,37 +121,63 @@ const Contact: React.FC = () => {
                                 sports solution.
                             </p>
 
-                            <div className="flex items-start gap-4">
-                                <div className="w-11 h-11 rounded-full bg-orange-100 flex items-center justify-center text-[#F47B20] text-xl">
-                                    ✉
+                            {/* Contact Details */}
+                            <div className="space-y-7">
+
+                                {/* Email */}
+                                <div className="flex items-start gap-4">
+                                    <div className="w-11 h-11 shrink-0 rounded-full bg-orange-100 flex items-center justify-center text-[#F47B20] text-xl">
+                                        ✉
+                                    </div>
+
+                                    <div>
+                                        <h3 className="font-semibold text-[#172B4D]">
+                                            Email Us
+                                        </h3>
+                                        <a
+                                            href="mailto:info@firstmove.co.in"
+                                            className="text-gray-600 hover:text-[#F47B20] transition"
+                                        >
+                                            info@firstmove.co.in
+                                        </a>
+                                    </div>
                                 </div>
 
-                                <div>
-                                    <h3 className="font-semibold text-[#172B4D]">Email Us</h3>
-                                    <a
-                                        href="mailto:info@firstmove.co.in"
-                                        className="text-gray-600 hover:text-[#F47B20] transition"
-                                    >
-                                        info@firstmove.co.in
-                                    </a>
-                                </div>
-                            </div>
+                                {/* Phone */}
+                                <div className="flex items-start gap-4">
+                                    <div className="w-11 h-11 shrink-0 rounded-full bg-orange-100 flex items-center justify-center text-[#F47B20]">
+                                        <Phone size={20} />
+                                    </div>
 
-                            {/* Phone */}
-                            <div className="flex items-start gap-4">
-                                <div className="w-11 h-11 rounded-full bg-orange-100 flex items-center justify-center text-[#F47B20]">
-                                    <Phone size={20} />
+                                    <div>
+                                        <h3 className="font-semibold text-[#172B4D]">
+                                            Call Us
+                                        </h3>
+                                        <a
+                                            href="tel:+919136244036"
+                                            className="text-gray-600 hover:text-[#F47B20] transition"
+                                        >
+                                            +91 91362 44036
+                                        </a>
+                                    </div>
                                 </div>
 
-                                <div>
-                                    <h3 className="font-semibold text-[#172B4D]">Call Us</h3>
-                                    <a
-                                        href="tel:+919136244036"
-                                        className="text-gray-600 hover:text-[#F47B20] transition"
-                                    >
-                                        +91 91362 44036
-                                    </a>
+                                {/* Location */}
+                                <div className="flex items-start gap-4">
+                                    <div className="w-11 h-11 shrink-0 rounded-full bg-orange-100 flex items-center justify-center text-[#F47B20]">
+                                        <MapPin size={20} />
+                                    </div>
+
+                                    <div>
+                                        <h3 className="font-semibold text-[#172B4D]">
+                                            Location
+                                        </h3>
+                                        <p className="text-gray-600">
+                                            Mumbai, India
+                                        </p>
+                                    </div>
                                 </div>
+
                             </div>
                         </div>
 
@@ -184,6 +210,7 @@ const Contact: React.FC = () => {
                                                 phone: '',
                                                 email: '',
                                                 location: '',
+                                                enquiryType: '',
                                                 message: '',
                                             });
                                             setSubmitted(false);
@@ -273,10 +300,37 @@ const Contact: React.FC = () => {
                                             </div>
                                         </div>
 
+                                        {/* Enquiry Type */}
+                                        <div>
+                                            <label className="block text-sm font-medium text-gray-700 mb-2">
+                                                I am a *
+                                            </label>
+
+                                            <select
+                                                name="enquiryType"
+                                                value={formData.enquiryType}
+                                                onChange={handleChange}
+                                                required
+                                                className="w-full rounded-lg border border-gray-200 px-4 py-3 outline-none focus:border-[#F47B20] transition bg-white text-gray-600"
+                                            >
+                                                <option value="" disabled>
+                                                    Select your role
+                                                </option>
+                                                <option value="Parent">Parent</option>
+                                                <option value="Player">Player</option>
+                                                <option value="Coach">Coach</option>
+                                                <option value="Venue Owner">Venue Owner</option>
+                                                <option value="Other">Other</option>
+                                            </select>
+                                        </div>
+
                                         {/* Message */}
                                         <div>
                                             <label className="block text-sm font-medium text-gray-700 mb-2">
-                                                Your Message <span className="text-gray-400">(Optional)</span>
+                                                Your Message{' '}
+                                                <span className="text-gray-400">
+                                                    (Optional)
+                                                </span>
                                             </label>
                                             <textarea
                                                 name="message"
@@ -299,7 +353,9 @@ const Contact: React.FC = () => {
                                             disabled={isSubmitting}
                                             className="w-full bg-[#F47B20] hover:bg-[#E66C12] disabled:opacity-60 text-white font-semibold py-3.5 rounded-lg transition duration-300"
                                         >
-                                            {isSubmitting ? 'Submitting...' : 'Submit Enquiry →'}
+                                            {isSubmitting
+                                                ? 'Submitting...'
+                                                : 'Submit Enquiry →'}
                                         </button>
 
                                         <p className="text-xs text-gray-400 text-center">

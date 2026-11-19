@@ -1,5 +1,6 @@
 
 import { useState, type ChangeEvent, type FormEvent } from 'react';
+import { ArrowRight } from 'lucide-react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import WhyFirstMove from '../components/WhyFirstMove';
@@ -149,7 +150,7 @@ function PrivateCoaching() {
                     <div className="flex min-w-0 flex-col items-start justify-center text-left">
 
                         <p className="mb-5 text-sm font-bold tracking-[0.25em] text-orange-500">
-                            PRIVATE COACHING
+                            Private Coaching
                         </p>
 
                         <h1 className="mb-6 max-w-[850px] text-3xl font-bold leading-[1.3] text-white sm:text-4xl lg:text-[52px]">
@@ -350,13 +351,16 @@ function PrivateCoaching() {
                                 )}
 
                                 {/* SUBMIT BUTTON */}
+
                                 <button
                                     type="submit"
                                     disabled={isSubmitting}
-                                    className="w-full rounded-md bg-[#06234b] py-3.5 font-semibold tracking-wide text-white transition-all duration-300 hover:bg-orange-500 disabled:opacity-60 sm:col-span-2"
+                                    className="inline-flex w-full items-center justify-center gap-3 rounded-md bg-brand-orange px-8 py-4 font-poppins text-sm font-semibold text-white transition-all duration-300 hover:-translate-y-1 hover:bg-brand-orange-dark hover:shadow-lg disabled:opacity-60 sm:col-span-2"
                                 >
                                     {isSubmitting ? 'SUBMITTING...' : 'BOOK MY FREE TRIAL'}
+                                    {!isSubmitting && <ArrowRight size={18} />}
                                 </button>
+
                             </form>
                         )}
                     </div>
@@ -368,7 +372,7 @@ function PrivateCoaching() {
             <section className="bg-[#ff8900] px-5 py-12 text-white">
                 <div className="mx-auto max-w-[1320px]">
                     <p className="text-center text-xs font-extrabold tracking-[0.35em]">
-                        FIND YOUR PASSION
+                        Find Your Passion
                     </p>
 
                     <h2 className="mt-3 text-center font-oswald text-4xl font-bold">
@@ -398,10 +402,10 @@ function PrivateCoaching() {
             <section className="bg-white px-6 py-16">
                 <div className="mx-auto max-w-[1320px]">
                     <p className="text-center text-xs font-semibold tracking-[0.35em] text-orange-500">
-                        OUR PROGRAMME
+                        Our Programme
                     </p>
 
-                    <h2 className="mt-4 text-center font-oswald text-4xl font-bold uppercase">
+                    <h2 className="mt-4 text-center font-oswald text-4xl font-bold">
                         Coaching Designed Around Your Schedule
                     </h2>
 
@@ -438,7 +442,7 @@ function PrivateCoaching() {
                                 {programme.level}
                             </p>
 
-                            <p className="mt-5 flex-1 text-sm font-medium leading-7 text-slate-600">
+                            <p className="mt-5 flex-1 text-sm font-normal leading-6 text-slate-700">
                                 {programme.description}
                             </p>
 
@@ -457,11 +461,15 @@ function PrivateCoaching() {
                             </ul>
 
                             <a
-                                href="https://forms.google.com/PASTE_YOUR_FORM_LINK_HERE" target="_blank" rel="noopener noreferrer"
-                                className="mt-8 bg-[#09264d] px-4 py-3 text-center text-xs font-extrabold tracking-wider text-white transition hover:bg-orange-500"
+                                href="https://forms.google.com/PASTE_YOUR_FORM_LINK_HERE"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="mt-8 inline-flex items-center justify-center gap-3 rounded-md bg-brand-orange px-8 py-4 text-center font-poppins text-sm font-semibold text-white transition-all duration-300 hover:-translate-y-1 hover:bg-brand-orange-dark hover:shadow-lg"
                             >
                                 {programme.button}
+                                <ArrowRight size={18} />
                             </a>
+
                         </article>
                     ))}
                 </div>
@@ -473,10 +481,10 @@ function PrivateCoaching() {
             <section className="bg-white px-6 py-16">
                 <div className="mx-auto max-w-6xl">
                     <p className="text-center text-xs font-extrabold tracking-[0.35em] text-orange-500">
-                        GET STARTED
+                        Get Started
                     </p>
 
-                    <h2 className="mt-3 text-center font-oswald text-4xl font-bold uppercase text-[#09264d]">
+                    <h2 className="mt-3 text-center font-oswald text-4xl font-bold text-[#09264d]">
                         Booking Process
                     </h2>
 
@@ -506,7 +514,7 @@ function PrivateCoaching() {
                                     {step.number}
                                 </div>
 
-                                <h3 className="mt-5 text-lg font-extrabold text-[#09264d]">
+                                <h3 className="mt-5 text-lg font-normal text-[#09264d]">
                                     {step.title}
                                 </h3>
 
@@ -523,22 +531,27 @@ function PrivateCoaching() {
             {/* FINAL CTA */}
             <section className="bg-orange-500 px-6 py-16 text-center text-white">
                 <div className="mx-auto max-w-4xl">
-                    <h2 className="font-oswald text-4xl font-bold uppercase md:text-5xl">
+                    <h2 className="font-oswald text-4xl font-bold  md:text-5xl">
                         Ready to Make Your First Move?
                     </h2>
 
-                    <p className="mx-auto mt-5 max-w-2xl text-base font-semibold leading-7">
+                    <p className="mx-auto mt-5 max-w-2xl text-base font-normal leading-7">
                         Find the right sport, coach or programme for you and take
                         your game to the next level.
                     </p>
 
                     <div className="mt-8 flex justify-center">
+
                         <a
-                            href="https://forms.google.com/PASTE_YOUR_FORM_LINK_HERE" target="_blank" rel="noopener noreferrer"
-                            className="bg-[#09264d] px-10 py-4 text-sm font-extrabold text-white transition hover:bg-white hover:text-[#09264d]"
+                            href="https://forms.google.com/PASTE_YOUR_FORM_LINK_HERE"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-flex items-center justify-center gap-3 rounded-md bg-white px-8 py-4 font-poppins text-sm font-semibold text-brand-orange transition-all duration-300 hover:-translate-y-1 hover:bg-[#09264d] hover:text-white hover:shadow-lg"
                         >
-                            BOOK A FREE TRIAL
+                            Book a Free Trial
+                            <ArrowRight size={18} />
                         </a>
+
                     </div>
                 </div>
             </section>
