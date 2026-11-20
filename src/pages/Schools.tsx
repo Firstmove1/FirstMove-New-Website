@@ -189,8 +189,8 @@ const Schools: React.FC = () => {
                 <section className="bg-[#F8F8F9] py-20 md:py-24">
                     <div className="max-w-7xl mx-auto px-6">
                         <SchoolSectionHeading
-                            label="Why School Choose Us"
-                            title="Our Value Addition to Your School"
+                            label="Our Services"
+                            title="What We Bring to Your School"
                         />
 
                         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
