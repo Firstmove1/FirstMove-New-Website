@@ -16,15 +16,14 @@ const Hero: React.FC = () => {
         paddingTop: '72px',   /* offset fixed navbar — centering is relative to remaining space */
       }}
     >
-      {/* Background image — position shifts on mobile to frame the athlete */}
+      {/* Background image */}
       <div
         id="hero-bg"
-        className="absolute inset-0"
+        className="absolute inset-0 bg-[position:78%_center] md:bg-center"
         style={{
           backgroundImage: `url(${heroImage})`,
           backgroundSize: 'cover',
           backgroundRepeat: 'no-repeat',
-          backgroundPosition: 'center center',
         }}
       />
 
