@@ -11,9 +11,9 @@ const Hero: React.FC = () => {
       className="relative flex items-center overflow-hidden"
       style={{
         minHeight: '600px',
-        height: '100svh',
+        height: '100dvh',
         maxHeight: '860px',
-        paddingTop: '72px',   /* offset fixed navbar — centering is relative to remaining space */
+        paddingTop: '72px',
       }}
     >
       {/* Background image */}

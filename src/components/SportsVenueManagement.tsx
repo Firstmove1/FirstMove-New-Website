@@ -92,8 +92,8 @@ const SportsVenueManagement: React.FC = () => {
                             />
                         </div>
 
-                        {/* VENUE SOLUTIONS BADGE */}
-                        <div className="absolute -bottom-4 right-4 md:-right-4 z-10 bg-brand-orange text-white rounded-xl px-6 py-5 shadow-xl">
+                        {/* VENUE SOLUTIONS BADGE — stays inside image on tablet, pops out only on lg+ */}
+                        <div className="absolute -bottom-4 right-4 lg:-right-4 z-10 bg-brand-orange text-white rounded-xl px-6 py-5 shadow-xl">
                             <p className="font-poppins text-3xl font-semibold">
                                 360°
                             </p>

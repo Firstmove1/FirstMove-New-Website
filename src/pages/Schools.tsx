@@ -375,7 +375,7 @@ const Schools: React.FC = () => {
 
 
                 {/* OUR PARTNERS */}
-                <section className="bg-[#F8F8F9] py-20">
+                <section className="bg-[#F8F8F9] py-10 md:py-14">
                     <div className="max-w-7xl mx-auto px-6 font-bold">
                         <SchoolSectionHeading
                             label="Our Partners"
@@ -421,7 +421,7 @@ const Schools: React.FC = () => {
                 </section>
 
                 {/* CONTACT CTA */}
-                <section className="bg-brand-orange py-20 text-center">
+                <section className="bg-brand-orange py-12 md:py-16 text-center">
                     <div className="max-w-3xl mx-auto px-6">
                         <span className="text-white/80 font-poppins text-xs uppercase tracking-[0.3em]">
                             Let's Build Champions

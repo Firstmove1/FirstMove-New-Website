@@ -399,7 +399,7 @@ function PrivateCoaching() {
             </section>
 
             {/* OUR PROGRAMME INTRODUCTION */}
-            <section className="bg-white px-6 py-16">
+            <section className="bg-white px-6 py-10 md:py-14">
                 <div className="mx-auto max-w-[1320px]">
                     <p className="text-center text-xs font-semibold tracking-[0.35em] text-orange-500">
                         Our Programme
@@ -423,7 +423,7 @@ function PrivateCoaching() {
             </section>
 
             {/* TWO PROGRAMMES */}
-            <section className="bg-[#f7f8fa] px-6 pb-20">
+            <section className="bg-[#f7f8fa] px-6 pb-12 md:pb-16">
                 <div className="mx-auto grid max-w-[1320px] gap-7 lg:grid-cols-2">
                     {programmes.map((programme) => (
                         <article
@@ -478,7 +478,7 @@ function PrivateCoaching() {
             <WhyFirstMove />
 
             {/* BOOKING PROCESS */}
-            <section className="bg-white px-6 py-16">
+            <section className="bg-white px-6 py-10 md:py-14">
                 <div className="mx-auto max-w-6xl">
                     <p className="text-center text-xs font-extrabold tracking-[0.35em] text-orange-500">
                         Get Started
@@ -488,7 +488,7 @@ function PrivateCoaching() {
                         Booking Process
                     </h2>
 
-                    <div className="mt-12 grid gap-10 md:grid-cols-3">
+                    <div className="mt-8 grid gap-6 md:grid-cols-3">
                         {[
                             {
                                 number: '01',
