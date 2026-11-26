@@ -221,7 +221,7 @@ const Schools: React.FC = () => {
                                         </h3>
 
                                         {/* Description */}
-                                        <p className="font-poppins text-gray-500 text-sm leading-relaxed">
+                                        <p className="font-poppins text-gray-500 text-sm leading-relaxed font-normal">
                                             {service.description}
                                         </p>
                                     </motion.div>
@@ -360,7 +360,7 @@ const Schools: React.FC = () => {
                                                 <h3 className="font-poppins font-bold text-navy text-base mb-1">
                                                     {step.title}
                                                 </h3>
-                                                <p className="font-poppins text-gray-500 text-sm leading-relaxed">
+                                                <p className="font-poppins text-gray-500 text-sm leading-relaxed font-normal">
                                                     {step.desc}
                                                 </p>
                                             </div>
@@ -406,11 +406,11 @@ const Schools: React.FC = () => {
                                             <Icon size={27} />
                                         </div>
 
-                                        <h3 className="font-poppins text-navy text-2xl mb-3 font-normal">
+                                        <h3 className="font-poppins text-navy text-2xl mb-3">
                                             {item.title}
                                         </h3>
 
-                                        <p className="font-poppins text-gray-500 text-sm leading-relaxed">
+                                        <p className="font-poppins text-gray-500 text-sm leading-relaxed font-normal">
                                             {item.description}
                                         </p>
                                     </motion.div>
