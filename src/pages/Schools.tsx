@@ -376,7 +376,7 @@ const Schools: React.FC = () => {
 
                 {/* OUR PARTNERS */}
                 <section className="bg-[#F8F8F9] py-10 md:py-14">
-                    <div className="max-w-7xl mx-auto px-6 font-bold">
+                    <div className="max-w-7xl mx-auto px-6">
                         <SchoolSectionHeading
                             label="Our Partners"
                             title="Growing Together"
