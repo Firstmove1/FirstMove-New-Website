@@ -406,7 +406,7 @@ const Schools: React.FC = () => {
                                             <Icon size={27} />
                                         </div>
 
-                                        <h3 className="font-poppins text-navy text-2xl mb-3">
+                                        <h3 className="font-poppins text-navy text-2xl mb-3 font-normal">
                                             {item.title}
                                         </h3>
 
