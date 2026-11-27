@@ -470,7 +470,7 @@ function PrivateCoaching() {
             {/* BOOKING PROCESS */}
             <section className="bg-white px-6 py-10 md:py-14">
                 <div className="mx-auto max-w-6xl">
-                    <p className="text-center text-xs font-extrabold tracking-[0.35em] text-orange-500">
+                    <p className="text-center text-xs font-normal tracking-[0.35em] text-orange-500">
                         Get Started
                     </p>
 
