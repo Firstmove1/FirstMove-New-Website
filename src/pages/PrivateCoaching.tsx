@@ -460,16 +460,6 @@ function PrivateCoaching() {
                                 ))}
                             </ul>
 
-                            <a
-                                href="https://forms.google.com/PASTE_YOUR_FORM_LINK_HERE"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="mt-8 inline-flex items-center justify-center gap-3 rounded-md bg-brand-orange px-8 py-4 text-center font-poppins text-sm font-semibold text-white transition-all duration-300 hover:-translate-y-1 hover:bg-brand-orange-dark hover:shadow-lg"
-                            >
-                                {programme.button}
-                                <ArrowRight size={18} />
-                            </a>
-
                         </article>
                     ))}
                 </div>
