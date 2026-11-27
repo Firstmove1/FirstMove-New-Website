@@ -319,6 +319,7 @@ const Contact = () => {
                                                 <option value="Parent">Parent</option>
                                                 <option value="Player">Player</option>
                                                 <option value="Coach">Coach</option>
+                                                <option value="School Representative">School Representative</option>
                                                 <option value="Venue Owner">Venue Owner</option>
                                                 <option value="Other">Other</option>
                                             </select>
