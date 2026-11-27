@@ -133,7 +133,7 @@ function PrivateCoaching() {
                     id="coaching-hero-bg"
                     className="absolute inset-0 -z-20 bg-cover"
                     style={{
-                        backgroundImage: `url(${imageBase}privbg.png)`,
+                        backgroundImage: `url(${imageBase}coaching-hero.jpg)`,
                         backgroundPosition: 'center center',
                     }}
                 />
@@ -460,16 +460,6 @@ function PrivateCoaching() {
                                 ))}
                             </ul>
 
-                            <a
-                                href="https://forms.google.com/PASTE_YOUR_FORM_LINK_HERE"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="mt-8 inline-flex items-center justify-center gap-3 rounded-md bg-brand-orange px-8 py-4 text-center font-poppins text-sm font-semibold text-white transition-all duration-300 hover:-translate-y-1 hover:bg-brand-orange-dark hover:shadow-lg"
-                            >
-                                {programme.button}
-                                <ArrowRight size={18} />
-                            </a>
-
                         </article>
                     ))}
                 </div>
@@ -480,7 +470,7 @@ function PrivateCoaching() {
             {/* BOOKING PROCESS */}
             <section className="bg-white px-6 py-10 md:py-14">
                 <div className="mx-auto max-w-6xl">
-                    <p className="text-center text-xs font-extrabold tracking-[0.35em] text-orange-500">
+                    <p className="text-center text-xs font-normal tracking-[0.35em] text-orange-500">
                         Get Started
                     </p>
 
@@ -543,9 +533,7 @@ function PrivateCoaching() {
                     <div className="mt-8 flex justify-center">
 
                         <a
-                            href="https://forms.google.com/PASTE_YOUR_FORM_LINK_HERE"
-                            target="_blank"
-                            rel="noopener noreferrer"
+                            href="#free-trial"
                             className="inline-flex items-center justify-center gap-3 rounded-md bg-white px-8 py-4 font-poppins text-sm font-semibold text-brand-orange transition-all duration-300 hover:-translate-y-1 hover:bg-[#09264d] hover:text-white hover:shadow-lg"
                         >
                             Book a Free Trial

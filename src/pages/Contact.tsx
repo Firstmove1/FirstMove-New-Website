@@ -4,7 +4,6 @@ import { motion } from 'framer-motion';
 import { Phone, MapPin } from 'lucide-react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
-import contactBg from '../assets/contact-bg.jpg';
 
 const GOOGLE_SCRIPT_URL =
     'https://script.google.com/macros/s/AKfycbweCsdBycmdy0aoPoWn1EtwchsZhn7-qdNMEFpStoDWR-kE7yjQG_P7smtqPuAq_vr_/exec';
@@ -71,14 +70,9 @@ const Contact = () => {
             <main>
                 {/* Hero */}
                 <section
-                    className="relative px-6 pt-28 pb-10 md:pt-32 md:pb-12 text-center overflow-hidden"
-                    style={{
-                        backgroundImage: `url(${contactBg})`,
-                        backgroundSize: 'cover',
-                        backgroundPosition: 'center',
-                    }}
+                    className="relative px-6 pt-28 pb-10 md:pt-32 md:pb-12 text-center overflow-hidden bg-[#091A33]"
                 >
-                    <div className="absolute inset-0 bg-white/70" />
+                    <div className="absolute inset-0 bg-gradient-to-br from-[#091A33] via-[#172B4D] to-[#0f2340]" />
 
                     <motion.div
                         initial={{ opacity: 0, y: 25 }}
@@ -90,11 +84,11 @@ const Contact = () => {
                             We'd Love to Hear From You
                         </p>
 
-                        <h1 className="text-4xl md:text-6xl font-bold text-[#172B4D] mb-6">
+                        <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
                             Let's Start a Conversation.
                         </h1>
 
-                        <p className="text-gray-600 text-base md:text-lg max-w-2xl mx-auto leading-relaxed">
+                        <p className="text-white/75 text-base md:text-lg max-w-2xl mx-auto leading-relaxed">
                             Whether you're a parent, player, school or sports venue owner,
                             we're here to help you take your next move in sports.
                         </p>
@@ -319,6 +313,7 @@ const Contact = () => {
                                                 <option value="Parent">Parent</option>
                                                 <option value="Player">Player</option>
                                                 <option value="Coach">Coach</option>
+                                                <option value="School Representative">School Representative</option>
                                                 <option value="Venue Owner">Venue Owner</option>
                                                 <option value="Other">Other</option>
                                             </select>
