@@ -133,7 +133,7 @@ function PrivateCoaching() {
                     id="coaching-hero-bg"
                     className="absolute inset-0 -z-20 bg-cover"
                     style={{
-                        backgroundImage: `url(${imageBase}privbg.png)`,
+                        backgroundImage: `url(${imageBase}coaching-hero.jpg)`,
                         backgroundPosition: 'center center',
                     }}
                 />
