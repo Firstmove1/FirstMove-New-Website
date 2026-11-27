@@ -533,9 +533,7 @@ function PrivateCoaching() {
                     <div className="mt-8 flex justify-center">
 
                         <a
-                            href="https://forms.google.com/PASTE_YOUR_FORM_LINK_HERE"
-                            target="_blank"
-                            rel="noopener noreferrer"
+                            href="#free-trial"
                             className="inline-flex items-center justify-center gap-3 rounded-md bg-white px-8 py-4 font-poppins text-sm font-semibold text-brand-orange transition-all duration-300 hover:-translate-y-1 hover:bg-[#09264d] hover:text-white hover:shadow-lg"
                         >
                             Book a Free Trial
