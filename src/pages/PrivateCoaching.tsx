@@ -149,7 +149,7 @@ function PrivateCoaching() {
                     {/* LEFT SIDE CONTENT */}
                     <div className="flex min-w-0 flex-col items-start justify-center text-left">
 
-                        <p className="mb-5 text-sm font-bold tracking-[0.25em] text-orange-500">
+                        <p className="mb-5 text-sm font-bold tracking-wide text-orange-500">
                             Private Coaching
                         </p>
 
