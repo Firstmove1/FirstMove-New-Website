@@ -152,10 +152,9 @@ const Schools: React.FC = () => {
                             transition={{ duration: 0.8 }}
                             className="max-w-2xl"
                         >
-                            <span className="font-poppins text-brand-orange text-xs font-bold tracking-wide">
+                            <span className="font-poppins text-brand-orange text-sm font-bold tracking-[0.12em]">
                                 For Schools
                             </span>
-
                             <h1 className="font-poppins text-white font-bold text-5xl sm:text-6xl md:text-7xl leading-[1.12] mt-5 mb-6">
                                 Make The Next
                                 <br />
