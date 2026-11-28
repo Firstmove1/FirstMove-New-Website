@@ -371,7 +371,7 @@ function PrivateCoaching() {
             {/* EXPLORE OUR SPORTS */}
             <section className="bg-[#ff8900] px-5 py-12 text-white">
                 <div className="mx-auto max-w-[1320px]">
-                    <p className="text-center text-xs font-extrabold tracking-[0.35em]">
+                    <p className="text-center text-xs font-extrabold tracking-wide">
                         Find Your Passion
                     </p>
 
@@ -401,7 +401,7 @@ function PrivateCoaching() {
             {/* OUR PROGRAMME INTRODUCTION */}
             <section className="bg-white px-6 py-10 md:py-14">
                 <div className="mx-auto max-w-[1320px]">
-                    <p className="text-center text-xs font-semibold tracking-[0.35em] text-orange-500">
+                    <p className="text-center text-xs font-semibold tracking-wide text-orange-500">
                         Our Programme
                     </p>
 
@@ -438,7 +438,7 @@ function PrivateCoaching() {
                                 {programme.title}
                             </h3>
 
-                            <p className="mt-2 text-sm font-extrabold uppercase tracking-wider text-orange-500">
+                            <p className="mt-2 text-sm font-extrabold tracking-wider text-orange-500">
                                 {programme.level}
                             </p>
 
@@ -470,7 +470,7 @@ function PrivateCoaching() {
             {/* BOOKING PROCESS */}
             <section className="bg-white px-6 py-10 md:py-14">
                 <div className="mx-auto max-w-6xl">
-                    <p className="text-center text-xs font-normal tracking-[0.35em] text-orange-500">
+                    <p className="text-center text-xs font-normal tracking-wide text-orange-500">
                         Get Started
                     </p>
 
@@ -504,7 +504,7 @@ function PrivateCoaching() {
                                     {step.number}
                                 </div>
 
-                                <h3 className="mt-5 text-lg font-normal text-[#09264d]">
+                                <h3 className="mt-5 text-lg font-semibold text-[#09264d]">
                                     {step.title}
                                 </h3>
 

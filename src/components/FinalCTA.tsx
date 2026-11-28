@@ -16,10 +16,9 @@ const FinalCTA: React.FC = () => {
           className="w-full flex flex-col items-center text-center"
         >
           {/* Eyebrow Text */}
-          <p className="w-full font-poppins font-semibold text-white/80 text-xs md:text-sm uppercase tracking-[0.2em] mb-5 text-center">
+          <p className="w-full font-semibold text-white/80 text-xs md:text-sm tracking-wide mb-5 text-center">
             Your Sporting Journey Starts Here
           </p>
-
           {/* Main Heading */}
           <h2
             className="w-full font-poppins font-bold text-white leading-tight mb-6 text-center"
@@ -45,7 +44,7 @@ const FinalCTA: React.FC = () => {
             href={`${import.meta.env.BASE_URL}?page=contact`}
             whileHover={{ scale: 1.04 }}
             whileTap={{ scale: 0.97 }}
-            className="inline-flex items-center justify-center gap-3 bg-white text-brand-orange font-poppins font-semibold text-sm px-9 py-4 rounded-md hover:bg-slate-100 transition-colors duration-300"
+            className="inline-flex items-center justify-center gap-3 bg-white text-navy hover:bg-navy hover:text-white font-poppins font-semibold text-sm px-9 py-4 rounded-md transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
           >
             Contact Us
             <ArrowRight size={20} />
