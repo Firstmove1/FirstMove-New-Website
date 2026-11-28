@@ -283,7 +283,7 @@ const Schools: React.FC = () => {
                             >
                                 <div className="w-full h-[420px] md:h-[560px] overflow-hidden rounded-2xl shadow-xl">
                                     <img
-                                        src={`${import.meta.env.BASE_URL}images/schools/approach.jpg`}
+                                        src={`${import.meta.env.BASE_URL}images/schools/approach-fn.png`}
                                         alt="Indian school students participating in sports activities"
                                         className="w-full h-full object-cover object-center"
                                         loading="lazy"
