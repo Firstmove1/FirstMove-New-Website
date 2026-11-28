@@ -53,7 +53,7 @@ const Hero: React.FC = () => {
           initial={{ opacity: 0, y: 15 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
-          className="font-poppins font-semibold text-brand-orange text-sm md:text-base tracking-widest uppercase mb-5"
+          className="w-full font-poppins font-normal text-brand-orange text-sm md:text-base tracking-widest mb-5 text-left"
         >
           Inspiring movement. Building confidence.
         </motion.p>

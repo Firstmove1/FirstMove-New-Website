@@ -149,7 +149,7 @@ function PrivateCoaching() {
                     {/* LEFT SIDE CONTENT */}
                     <div className="flex min-w-0 flex-col items-start justify-center text-left">
 
-                        <p className="mb-5 text-sm font-bold tracking-[0.25em] text-orange-500">
+                        <p className="mb-5 text-sm font-bold tracking-widest text-orange-500">
                             Private Coaching
                         </p>
 
@@ -371,7 +371,7 @@ function PrivateCoaching() {
             {/* EXPLORE OUR SPORTS */}
             <section className="bg-[#ff8900] px-5 py-12 text-white">
                 <div className="mx-auto max-w-[1320px]">
-                    <p className="text-center text-xs font-extrabold tracking-[0.35em]">
+                    <p className="text-center text-sm font-semibold tracking-widest">
                         Find Your Passion
                     </p>
 
@@ -401,7 +401,7 @@ function PrivateCoaching() {
             {/* OUR PROGRAMME INTRODUCTION */}
             <section className="bg-white px-6 py-10 md:py-14">
                 <div className="mx-auto max-w-[1320px]">
-                    <p className="text-center text-xs font-semibold tracking-[0.35em] text-orange-500">
+                    <p className="text-center text-sm font-semibold tracking-widest text-orange-500">
                         Our Programme
                     </p>
 
@@ -438,10 +438,9 @@ function PrivateCoaching() {
                                 {programme.title}
                             </h3>
 
-                            <p className="mt-2 text-sm font-extrabold uppercase tracking-wider text-orange-500">
+                            <p className="mt-2 text-sm font-semibold  tracking-normal text-orange-500">
                                 {programme.level}
                             </p>
-
                             <p className="mt-5 flex-1 text-sm font-normal leading-6 text-slate-700">
                                 {programme.description}
                             </p>
@@ -470,10 +469,9 @@ function PrivateCoaching() {
             {/* BOOKING PROCESS */}
             <section className="bg-white px-6 py-10 md:py-14">
                 <div className="mx-auto max-w-6xl">
-                    <p className="text-center text-xs font-normal tracking-[0.35em] text-orange-500">
+                    <p className="text-center text-xs font-semibold tracking-tight text-orange-500">
                         Get Started
                     </p>
-
                     <h2 className="mt-3 text-center font-oswald text-4xl font-bold text-[#09264d]">
                         Booking Process
                     </h2>
@@ -504,7 +502,7 @@ function PrivateCoaching() {
                                     {step.number}
                                 </div>
 
-                                <h3 className="mt-5 text-lg font-normal text-[#09264d]">
+                                <h3 className="mt-5 text-lg font-semibold text-[#09264d]">
                                     {step.title}
                                 </h3>
 

@@ -31,8 +31,8 @@ const StructuredDifference: React.FC = () => {
 
         {/* Section Heading */}
         <div className="w-full max-w-4xl mx-auto text-center mb-14">
-          <p className="font-poppins font-medium text-brand-orange text-sm mb-5 tracking-wide">
-            THE FIRSTMOVE APPROACH
+          <p className="font-poppins font-semibold text-brand-orange text-sm mb-5 tracking-wide">
+            The FirstMove Approach
           </p>
 
           <h2 className="font-poppins font-semibold text-white text-3xl md:text-4xl lg:text-[46px] leading-[1.35] mb-6">

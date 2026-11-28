@@ -152,7 +152,7 @@ const Schools: React.FC = () => {
                             transition={{ duration: 0.8 }}
                             className="max-w-2xl"
                         >
-                            <span className="font-poppins text-brand-orange text-xs font-bold tracking-[0.3em] uppercase">
+                            <span className="text-brand-orange text-sm font-bold tracking-widest">
                                 For Schools
                             </span>
 
@@ -423,7 +423,7 @@ const Schools: React.FC = () => {
                 {/* CONTACT CTA */}
                 <section className="bg-brand-orange py-12 md:py-16 text-center">
                     <div className="max-w-3xl mx-auto px-6">
-                        <span className="text-white/80 font-poppins text-xs uppercase tracking-[0.3em]">
+                        <span className="text-white/90 text-xs font-semibold tracking-widest">
                             Let's Build Champions
                         </span>
 

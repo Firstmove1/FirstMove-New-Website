@@ -80,7 +80,7 @@ const Contact = () => {
                         transition={{ duration: 0.6 }}
                         className="relative z-10 max-w-4xl mx-auto"
                     >
-                        <p className="text-[#F47B20] font-semibold tracking-[0.1em] text-sm mb-5">
+                        <p className="text-[#F47B20] font-semibold tracking-wide text-sm mb-5">
                             We'd Love to Hear From You
                         </p>
 
@@ -118,24 +118,6 @@ const Contact = () => {
                             {/* Contact Details */}
                             <div className="space-y-7">
 
-                                {/* Email */}
-                                <div className="flex items-start gap-4">
-                                    <div className="w-11 h-11 shrink-0 rounded-full bg-orange-100 flex items-center justify-center text-[#F47B20] text-xl">
-                                        ✉
-                                    </div>
-
-                                    <div>
-                                        <h3 className="font-semibold text-[#172B4D]">
-                                            Email Us
-                                        </h3>
-                                        <a
-                                            href="mailto:info@firstmove.co.in"
-                                            className="text-gray-600 hover:text-[#F47B20] transition"
-                                        >
-                                            info@firstmove.co.in
-                                        </a>
-                                    </div>
-                                </div>
 
                                 {/* Phone */}
                                 <div className="flex items-start gap-4">
@@ -155,6 +137,27 @@ const Contact = () => {
                                         </a>
                                     </div>
                                 </div>
+
+                                {/* Email */}
+                                <div className="flex items-start gap-4">
+                                    <div className="w-11 h-11 shrink-0 rounded-full bg-orange-100 flex items-center justify-center text-[#F47B20] text-xl">
+                                        ✉
+                                    </div>
+
+                                    <div>
+                                        <h3 className="font-semibold text-[#172B4D]">
+                                            Email Us
+                                        </h3>
+                                        <a
+                                            href="mailto:info@firstmove.co.in"
+                                            className="text-gray-600 hover:text-[#F47B20] transition"
+                                        >
+                                            info@firstmove.co.in
+                                        </a>
+                                    </div>
+                                </div>
+
+
 
                                 {/* Location */}
                                 <div className="flex items-start gap-4">
@@ -192,8 +195,7 @@ const Contact = () => {
                                     </h2>
 
                                     <p className="text-gray-600 leading-relaxed mb-8">
-                                        Your enquiry has been recorded on this page. Thank you
-                                        for reaching out to FirstMove.
+                                        Thank you for reaching out to us. We will get in touch with you shortly.
                                     </p>
 
                                     <button
