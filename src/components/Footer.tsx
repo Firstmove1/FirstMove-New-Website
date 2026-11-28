@@ -1,11 +1,5 @@
 
 import React from 'react';
-import {
-  LinkedInIcon,
-  InstagramIcon,
-  FacebookIcon,
-  TwitterXIcon,
-} from './SocialIcons';
 
 const quickLinks = [
   { label: 'Home', href: `${import.meta.env.BASE_URL}#home` },
@@ -37,40 +31,6 @@ const Footer: React.FC = () => {
               structured programmes and experiences that inspire confidence,
               teamwork and lifelong participation.
             </p>
-
-            <div className="flex items-center gap-5 mt-6">
-              <a
-                href="#"
-                aria-label="LinkedIn"
-                className="text-white/60 hover:text-brand-orange transition-colors"
-              >
-                <LinkedInIcon size={19} />
-              </a>
-
-              <a
-                href="#"
-                aria-label="Instagram"
-                className="text-white/60 hover:text-brand-orange transition-colors"
-              >
-                <InstagramIcon size={19} />
-              </a>
-
-              <a
-                href="#"
-                aria-label="Facebook"
-                className="text-white/60 hover:text-brand-orange transition-colors"
-              >
-                <FacebookIcon size={19} />
-              </a>
-
-              <a
-                href="#"
-                aria-label="Twitter / X"
-                className="text-white/60 hover:text-brand-orange transition-colors"
-              >
-                <TwitterXIcon size={18} />
-              </a>
-            </div>
           </div>
 
           {/* Quick Links */}
